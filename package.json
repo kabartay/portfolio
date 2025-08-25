@@ -2,11 +2,10 @@
     "name": "portfolio",
     "version": "1.0.0",
     "description": "Mukharbek Organokov's professional portfolio",
-    "main": "public/index.html",
     "scripts": {
-        "start": "npx serve .",
-        "build": "echo 'No build needed for static site'",
-        "dev": "npx serve . -l 3000"
+        "start": "npx serve public",
+        "dev": "npx serve public -l 3000",
+        "build": "echo 'No build needed for static site'"
     },
     "keywords": [
         "portfolio",
