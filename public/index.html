@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukharbek Organokov - Senior AI Stack Engineer</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #a0aec0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-dark: #1a202c;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Floating particles animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            width: calc(50% - 30px);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-dark);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d1117;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 40px !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                transform: none;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Mukharbek Organokov</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mukharbek Organokov</h1>
+            <p>Senior AI Stack Engineer</p>
+            <a href="#about" class="cta-button">Discover My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p class="spaced-paragraph">
+                        I'm an AI/ML Engineer with a strong background in MLOps and experience delivering
+                        production-grade ML systems. I've designed and deployed AI solutions for cybersecurity,
+                        financial security, network intelligence, and large-scale data analytics.
+                        while contributing to publications, patents, and mentoring AI talents.
+                    </p>
+
+                    <p class="spaced-paragraph">
+                        I believe AI must be <strong>responsible</strong>, <strong>resilient</strong>,
+                        and <strong>sustainable</strong>. My goal is to design robust, adaptive, and climate-aware
+                        AI infrastructure — minimizing wasted power and compute, while enabling scalable, trustworthy,
+                        and energy-efficient innovation for a sustainable future.
+                    </p>
+
+                    <p>
+                        Beyond industry, I co-founded Circassian DNA, a non-profit initiative reconnecting
+                        the global Circassian diaspora through data-driven genealogy and genetic insights. I see
+                        the power of AI not only to solve complex challenges, but also for fostering
+                        human connection, preserving cultural heritage, and driving meaningful global impact.
+                    </p>
+                </div>
+                <div class="skills fade-in">
+
+                    <div class="skill-card">
+                        <h4>Programming</h4>
+                        <p>Python, Rust, SQL, Bash</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>MLOps & Infra</h4>
+                        <p>Docker, Kubernetes, Kubeflow, MLFlow, KServe, AWS, GitOps, ArgoCD, Helm, FastAPI, Flask</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>Machine Learning</h4>
+                        <p>XGBoost, LightGBM, Ray, Scikit-learn, ONNX</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>Deep Learning</h4>
+                        <p>PyTorch, TensorFlow, Keras, Transformers, GNN, GRU</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>Gen AI</h4>
+                        <p>LLM, Hugging Face, LangChain, LlamaIndex, Pinecone, Fine-tuning</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>Data & Analytics</h4>
+                        <p>Pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Career Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title">Senior AI Stack Engineer</h3>
+                        <div class="timeline-company">Flex AI</div>
+                        <p>
+                            Building robust AI infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3 class="timeline-title">Machine Learning Engineer</h3>
+                        <div class="timeline-company">Cisco Systems</div>
+                        <p>
+                            Designed and optimized MLOps tooling and infrastructure, enabling scalable deployment and
+                            monitoring of machine learning systems. I developed AI models for cybersecurity threat
+                            detection and automated network configuration management, and contributed to multi-agent
+                            architectures leveraging LLMs. My work included supervising a PhD intern and co-authoring
+                            research, with one granted patent and two pending patents in applied AI.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">MLOps Engineer</h3>
+                        <div class="timeline-company">StartupAI</div>
+                        <p>
+                            Designed and implemented MLOps benchmarking tools to evaluate and optimize ML pipelines for
+                            internet security, brand safety, digital media trust, and contextual ad targeting.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3 class="timeline-title">Data Scientist</h3>
+                        <div class="timeline-company">sense4data</div>
+                        <p>
+                            Engineered and deployed ML systems for financial security and fraud detection, enhancing
+                            anomaly detection in transactional data. Developed sports forecasting models,
+                            a computer vision pipeline for automated railway tie defect detection, and an NLP system
+                            for resume-job offer matching, covering the full lifecycle from data preprocessing
+                            and feature engineering to production deployment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2019</div>
+                        <h3 class="timeline-title">Data Scientist</h3>
+                        <div class="timeline-company">The Alan Turing Institute</div>
+                        <p>
+                            Contributed to several applied research projects, including shallow gas detection from
+                            seabed seismic imagery (BGS), multi-sensor intelligent machining process monitoring (AMRC,
+                            co-facilitator), semantic and instance segmentation of 3D point clouds (SenSat), and
+                            the analysis of network metrics on customer perception of reliability (Telus).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2019</div>
+                        <h3 class="timeline-title">PhD Researcher</h3>
+                        <div class="timeline-company">CNRS</div>
+                        <p>
+                            Pursued doctoral research in multi-messenger astrophysics, exploring the intersection
+                            between neutrino and gamma-ray physics. Contributed to the ANTARES, HAWC, and KM3NeT
+                            collaborations (2016-2020), focusing on joint data analysis, detector performance
+                            optimization, and the development of advanced methodologies for high-energy particle
+                            detection.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">Latest Blog Posts</h2>
+            <div class="blog-grid">
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Future of AGI: Challenges and Opportunities</h3>
+                        <p class="blog-excerpt">Exploring the current state of artificial general intelligence research
+                            and what lies ahead for the field...</p>
+                        <div class="blog-meta">
+                            <span>Sep 15, 2025</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🔬</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Ethical AI: Bias Detection in Deep Learning</h3>
+                        <p class="blog-excerpt">Understanding and mitigating bias in AI models to create fair and
+                            inclusive AI systems...</p>
+                        <div class="blog-meta">
+                            <span>Aug 30, 2025</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🧠</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Circassian DNA Chatbot</h3>
+                        <p class="blog-excerpt">A comprehensive guide to implementing MLOps practices for production
+                            machine learning systems: example of chatbot development...</p>
+                        <div class="blog-meta">
+                            <span>Aug 31, 2025</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always interested in discussing AI, progress with AGI, LLM architectures,
+                        MLOPs tools, machine learning algorithms, and potential collaboration opportunities.
+                    </p>
+
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>mukharbek.organokov@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <span>https://www.linkedin.com/in/circassia/</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐙</span>
+                        <span>https://github.com/kabartay</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Paris, FR</span>
+                    </div>
+                </div>
+
+                <form class="contact-form fade-in">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mukharbek Organokov. All rights reserved. Built with passion for AI.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form handling
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Simulate form submission
+            alert('Thank you for your message! I\'ll get back to you soon.');
+
+            // Reset form
+            e.target.reset();
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.skill-card, .blog-card, .timeline-content').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Typing animation for hero text (simple version)
+        const heroTitle = document.querySelector('.hero h1');
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Start typing animation after a short delay
+        setTimeout(typeWriter, 1000);
+    </script>
+</body>
+
+</html>
