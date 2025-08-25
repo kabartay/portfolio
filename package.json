@@ -4,9 +4,9 @@
     "description": "Mukharbek Organokov's professional portfolio",
     "main": "public/index.html",
     "scripts": {
-        "start": "npx serve public",
+        "start": "npx serve .",
         "build": "echo 'No build needed for static site'",
-        "dev": "npx serve public -l 3000"
+        "dev": "npx serve . -l 3000"
     },
     "keywords": [
         "portfolio",

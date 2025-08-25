@@ -124,13 +124,15 @@ html {
     position: relative;
 }
 
+/* h1: 3.5rem vs p: 1.25rem*/
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
 
+/* h1: 3.5rem vs p: 1.25rem*/
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -528,4 +530,19 @@ section {
 
 .spaced-paragraph {
     margin-bottom: 1.5rem;
+}
+
+.blog-content a {
+    color: inherit;
+    /* Keeps link color same as surrounding text */
+    text-decoration: underline;
+    /* Adds underline for still indicating it's a link */
+    text-decoration-color: currentColor;
+    /* Matches underline to text color */
+}
+
+.blog-content a:hover {
+    color: #8a8a8a;
+    /* Slightly brighter grey */
+    text-decoration-color: #8a8a8a;
 }
