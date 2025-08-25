@@ -333,20 +333,30 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Blog Section */
+/* Blog Section - Fixed version */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    /* Clean 3-column grid */
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
+    /* Make all cards same height */
 }
 
+/* Each blog card should stay in its grid cell */
 .blog-card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* height: fit-content;
+    /* Allow natural height */
+    height: 100%;
+    /* Take full available height */
 }
 
 .blog-card:hover {
@@ -362,10 +372,17 @@ section {
     justify-content: center;
     color: white;
     font-size: 3rem;
+    flex-shrink: 0;
+    /* Don't shrink the image area */
 }
 
 .blog-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Take remaining space */
+    height: 100%;
 }
 
 .blog-title {
@@ -373,22 +390,86 @@ section {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    min-height: 2.4rem;
+    /* Reserve space for 2 lines of title */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit title to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.2;
 }
 
 .blog-excerpt {
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.6;
+    flex-grow: 1;
+    /* Take available space */
+    margin-bottom: 1rem;
+}
+
+/* Clamp: show only the first N lines until expanded */
+.blog-excerpt.clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* Show 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog-excerpt.expanded {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+
+/* Read more / Show less button */
+.toggle-excerpt {
+    margin-top: 1rem;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 0.85rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    /* Don't shrink the button */
+}
+
+.toggle-excerpt:hover {
+    color: var(--secondary-color);
 }
 
 .blog-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: auto;
+    /* Push to bottom */
+    padding-top: 1rem;
     color: var(--text-light);
     font-size: 0.8rem;
+    border-top: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    /* Don't shrink the meta area */
 }
+
+/* Links inside blog content */
+.blog-content a:not(.toggle-excerpt) {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+}
+
+.blog-content a:not(.toggle-excerpt):hover {
+    color: var(--primary-color);
+    text-decoration-color: var(--primary-color);
+}
+
 
 /* Contact Section */
 .contact {
@@ -514,6 +595,26 @@ section {
     .section-title {
         font-size: 2rem;
     }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+
+    .blog-title {
+        min-height: auto;
+        /* Remove fixed height on mobile */
+        -webkit-line-clamp: unset;
+        /* Allow full title on mobile */
+    }
+
+}
+
+@media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
 }
 
 /* Scroll animations */
@@ -530,19 +631,4 @@ section {
 
 .spaced-paragraph {
     margin-bottom: 1.5rem;
-}
-
-.blog-content a {
-    color: inherit;
-    /* Keeps link color same as surrounding text */
-    text-decoration: underline;
-    /* Adds underline for still indicating it's a link */
-    text-decoration-color: currentColor;
-    /* Matches underline to text color */
-}
-
-.blog-content a:hover {
-    color: #8a8a8a;
-    /* Slightly brighter grey */
-    text-decoration-color: #8a8a8a;
 }

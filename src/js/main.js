@@ -15,6 +15,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Per-card "Read more / Show less" toggle
+document.querySelectorAll('.toggle-excerpt').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const excerpt = btn.previousElementSibling; // the .blog-excerpt
+        const expanded = excerpt.classList.toggle('expanded');
+        excerpt.classList.toggle('clamp', !expanded);
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded ? 'Show less' : 'Read more';
+    });
+});
+
+
+
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
