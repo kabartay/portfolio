@@ -29,6 +29,7 @@ body {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 /* Navigation */
@@ -94,6 +95,15 @@ html {
     width: 100%;
 }
 
+/* Active navigation link styling */
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -124,7 +134,6 @@ html {
     position: relative;
 }
 
-/* h1: 3.5rem vs p: 1.25rem*/
 .hero h1 {
     font-size: 3.0rem;
     font-weight: 700;
@@ -132,7 +141,6 @@ html {
     animation: fadeInUp 1s ease-out;
 }
 
-/* h1: 3.5rem vs p: 1.25rem*/
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
@@ -159,7 +167,7 @@ html {
     transform: translateY(-2px);
 }
 
-/* Floating particles animation */
+/* Animations */
 @keyframes float {
 
     0%,
@@ -187,6 +195,7 @@ html {
 /* Section Styles */
 section {
     padding: 5rem 0;
+    scroll-margin-top: 80px;
 }
 
 .container {
@@ -333,18 +342,15 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Blog Section - Fixed version */
+/* Blog Section */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Clean 3-column grid */
     gap: 2rem;
     margin-top: 2rem;
     align-items: stretch;
-    /* Make all cards same height */
 }
 
-/* Each blog card should stay in its grid cell */
 .blog-card {
     background: white;
     border-radius: 15px;
@@ -353,10 +359,7 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* height: fit-content;
-    /* Allow natural height */
     height: 100%;
-    /* Take full available height */
 }
 
 .blog-card:hover {
@@ -373,7 +376,6 @@ section {
     color: white;
     font-size: 3rem;
     flex-shrink: 0;
-    /* Don't shrink the image area */
 }
 
 .blog-content {
@@ -381,7 +383,6 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Take remaining space */
     height: 100%;
 }
 
@@ -391,10 +392,8 @@ section {
     margin-bottom: 0.5rem;
     color: var(--text-primary);
     min-height: 2.4rem;
-    /* Reserve space for 2 lines of title */
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Limit title to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.2;
@@ -405,15 +404,12 @@ section {
     font-size: 0.9rem;
     line-height: 1.6;
     flex-grow: 1;
-    /* Take available space */
     margin-bottom: 1rem;
 }
 
-/* Clamp: show only the first N lines until expanded */
 .blog-excerpt.clamp {
     display: -webkit-box;
     -webkit-line-clamp: 4;
-    /* Show 4 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -424,7 +420,6 @@ section {
     overflow: visible;
 }
 
-/* Read more / Show less button */
 .toggle-excerpt {
     margin-top: 1rem;
     background: none;
@@ -437,7 +432,6 @@ section {
     font-size: 0.85rem;
     font-weight: 500;
     flex-shrink: 0;
-    /* Don't shrink the button */
 }
 
 .toggle-excerpt:hover {
@@ -449,16 +443,13 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    /* Push to bottom */
     padding-top: 1rem;
     color: var(--text-light);
     font-size: 0.8rem;
     border-top: 1px solid #f0f0f0;
     flex-shrink: 0;
-    /* Don't shrink the meta area */
 }
 
-/* Links inside blog content */
 .blog-content a:not(.toggle-excerpt) {
     color: inherit;
     text-decoration: underline;
@@ -469,7 +460,6 @@ section {
     color: var(--primary-color);
     text-decoration-color: var(--primary-color);
 }
-
 
 /* Contact Section */
 .contact {
@@ -487,10 +477,14 @@ section {
     margin-bottom: 1rem;
 }
 
+.contact-info p {
+    margin-bottom: 2rem;
+}
+
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     gap: 1rem;
 }
 
@@ -558,6 +552,139 @@ section {
     padding: 2rem 0;
 }
 
+/* General Utilities */
+.spaced-paragraph {
+    margin-bottom: 1.5rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section animations for loading */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ===== SMOOTH SCROLLING PAGE STYLES (long.html) ===== */
+
+/* Loading indicator */
+.loading {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    background: var(--bg-secondary);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+/* Styles specific to smooth-scroll-page (long.html) */
+.smooth-scroll-page main {
+    padding-top: 0;
+}
+
+.smooth-scroll-page section {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    align-items: center;
+    scroll-margin-top: 80px;
+}
+
+.smooth-scroll-page #all-sections {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+}
+
+/* Content wrapper for each section in smooth-scroll-page */
+.smooth-scroll-page section .hero-content,
+.smooth-scroll-page section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+/* Background colors for smooth-scroll-page sections */
+.smooth-scroll-page section#home {
+    background: var(--gradient);
+    color: white;
+}
+
+.smooth-scroll-page section#about {
+    background: var(--bg-secondary);
+}
+
+.smooth-scroll-page section#experience {
+    background: var(--bg-primary);
+}
+
+.smooth-scroll-page section#blog {
+    background: var(--bg-secondary);
+}
+
+.smooth-scroll-page section#contact {
+    background: var(--bg-dark);
+    color: white;
+}
+
+/* ===== REGULAR PAGE STYLES ===== */
+
+/* Default section styles for individual pages */
+section {
+    padding: 5rem 0;
+    scroll-margin-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links {
@@ -598,37 +725,22 @@ section {
 
     .blog-grid {
         grid-template-columns: 1fr;
-        /* 1 column on mobile */
     }
 
     .blog-title {
         min-height: auto;
-        /* Remove fixed height on mobile */
         -webkit-line-clamp: unset;
-        /* Allow full title on mobile */
     }
 
+    /* Mobile adjustments for smooth scroll page */
+    .smooth-scroll-page section .hero-content,
+    .smooth-scroll-page section .container {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 992px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on tablets */
     }
-}
-
-/* Scroll animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.spaced-paragraph {
-    margin-bottom: 1.5rem;
 }

@@ -4,27 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>All-in-One — Mukharbek Organokov</title>
+    <title>Portfolio — Mukharbek Organokov</title>
     <link rel="stylesheet" href="src/css/style.css" />
-    <style>
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        section {
-            scroll-margin-top: 80px;
-        }
-    </style>
 </head>
 
-<body>
-    <!-- Same navbar, but fragment links -->
+<body class="smooth-scroll-page">
     <nav class="navbar" role="navigation" aria-label="Main">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
             <ul class="nav-links">
-                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -34,6 +23,7 @@
     </nav>
 
     <main id="main" style="padding-top:80px;">
+        <div class="loading" id="loading-indicator">Loading content...</div>
         <div id="all-sections" class="container"></div>
     </main>
 
