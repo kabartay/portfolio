@@ -1,0 +1,25 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "Mukharbek Organokov's professional portfolio",
+    "scripts": {
+        "start": "npx serve public",
+        "dev": "npx serve public -l 3000",
+        "build": "echo 'No build needed for static site'"
+    },
+    "keywords": [
+        "portfolio",
+        "ai-engineer",
+        "ml-engineer",
+        "machine-learning",
+        "website"
+    ],
+    "author": "Mukharbek Organokov <mukharbek.organokov@gmail.com>",
+    "license": "GPLv3",
+    "dependencies": {
+        "serve": "^14.0.0"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
