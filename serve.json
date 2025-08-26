@@ -1,3 +1,37 @@
 {
-    "directoryListing": false
+    "directoryListing": false,
+    "public": "public",
+    "rewrites": [
+        {
+            "source": "/about",
+            "destination": "/about.html"
+        },
+        {
+            "source": "/blog",
+            "destination": "/blog.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html"
+        },
+        {
+            "source": "/experience",
+            "destination": "/experience.html"
+        },
+        {
+            "source": "/home",
+            "destination": "/home.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/src/**",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        }
+    ]
 }
