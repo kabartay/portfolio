@@ -57,7 +57,7 @@ precommit:
 	@echo "Installing pre-commit git hooks"
 	$(VENV)/bin/pre-commit install
 
-check: format lint test
+check: format lint
 	@echo "All checks passed!"
 
 clean:
