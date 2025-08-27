@@ -277,3 +277,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+/* JS handler (keeps you on the page, shows status) for email */
+(() => {
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = 'Sending...';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                form.reset();
+                statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
+            } else {
+                const data = await res.json().catch(() => null);
+                statusEl.textContent =
+                    data?.errors?.[0]?.message || 'Sorry, something went wrong.';
+            }
+        } catch {
+            statusEl.textContent = 'Network error. Please try again.';
+        }
+    });
+})();
