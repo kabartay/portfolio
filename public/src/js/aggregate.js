@@ -269,11 +269,31 @@ function setupInteractions() {
     }
 
     // Typing animation for hero title - run after everything loads
+    // setTimeout(() => {
+    //     const heroTitle = document.querySelector('#home h1');
+    //     if (heroTitle) {
+    //         const text = heroTitle.textContent;
+    //         heroTitle.textContent = '';
+
+    //         let i = 0;
+    //         function typeWriter() {
+    //             if (i < text.length) {
+    //                 heroTitle.textContent += text.charAt(i);
+    //                 i++;
+    //                 setTimeout(typeWriter, 100);
+    //             }
+    //         }
+
+    //         setTimeout(typeWriter, 500);
+    //     }
+    // }, 1500); // Wait 1.5 seconds for content to fully load
+
+    // Clear name immediately and start typing
     setTimeout(() => {
         const heroTitle = document.querySelector('#home h1');
         if (heroTitle) {
             const text = heroTitle.textContent;
-            heroTitle.textContent = '';
+            heroTitle.textContent = ''; // Clear immediately
 
             let i = 0;
             function typeWriter() {
@@ -284,9 +304,10 @@ function setupInteractions() {
                 }
             }
 
-            setTimeout(typeWriter, 500);
+            // Start typing immediately (no delay)
+            typeWriter();
         }
-    }, 1500); // Wait 1.5 seconds for content to fully load
+    }, 100); // Much shorter delay - clear as soon as content loads
 
 }
 
