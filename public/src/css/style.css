@@ -896,3 +896,17 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.privacy-note {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+}
+
+.consent {
+    display: flex;
+    gap: .5rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    margin: .5rem 0;
+}

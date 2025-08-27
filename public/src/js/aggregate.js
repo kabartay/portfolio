@@ -179,25 +179,25 @@ function setupInteractions() {
         });
     });
 
-    // Contact form
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+    // Contact form -> deleted to avoid fire of first form
+    // const contactForm = document.querySelector('.contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', (e) => {
+    //         e.preventDefault();
 
-            const name = document.getElementById('name')?.value;
-            const email = document.getElementById('email')?.value;
-            const message = document.getElementById('message')?.value;
+    //         const name = document.getElementById('name')?.value;
+    //         const email = document.getElementById('email')?.value;
+    //         const message = document.getElementById('message')?.value;
 
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
+    //         if (!name || !email || !message) {
+    //             alert('Please fill in all fields');
+    //             return;
+    //         }
 
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            contactForm.reset();
-        });
-    }
+    //         alert('Thank you for your message! I\'ll get back to you soon.');
+    //         contactForm.reset();
+    //     });
+    // }
 
     // Hover effects
     document.querySelectorAll('.skill-card, .blog-card, .timeline-content').forEach(card => {

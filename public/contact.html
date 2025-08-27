@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Mukharbek Organokov - AI Engineer">
     <title>Contact - Mukharbek Organokov</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="canonical" href="https://www.organokov.com/contact" />
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 
 <body>
@@ -20,7 +21,6 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form fade-in">
+                <!-- <form class="contact-form fade-in">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" placeholder="Your Name" required>
@@ -71,7 +71,45 @@
                         <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
+                </form> -->
+
+                <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/mwpnpkpl"
+                    method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..."
+                            required></textarea>
+                    </div>
+
+                    <!-- optional: subject line you’ll see in your inbox -->
+                    <input type="hidden" name="_subject" value="New message from portfolio site">
+
+                    <!-- honeypot (spam trap) -->
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                        style="position:absolute;left:-9999px;opacity:0;">
+
+                    <!-- if you want a redirect page after classic submit -->
+                    <!-- <input type="hidden" name="_next" value="https://your-domain/thanks.html"> -->
+
+                    <label class="consent">
+                        <input type="checkbox" name="consent" required>
+                        I consent to you storing my details to respond to my message. <a href="/privacy.html">Privacy
+                            Policy</a>
+                    </label>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+
+                <p id="formStatus" class="form-status" aria-live="polite" style="color:white;"></p>
+
+
             </div>
         </div>
     </section>
@@ -86,7 +124,7 @@
     <!-- Back to top button -->
     <button class="back-to-top" id="backToTop">↑</button>
 
-    <script src="src/js/main.js"></script>
+    <script src="/src/js/main.js"></script>
 </body>
 
 </html>
