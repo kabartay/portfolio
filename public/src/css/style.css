@@ -26,7 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -76,7 +75,8 @@ html {
     position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -91,17 +91,27 @@ html {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Active navigation link styling */
-.nav-links a.active {
-    color: var(--primary-color);
-}
-
+.nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+/*
+.portfolio-link {
+    background: rgba(102, 126, 234, 0.1) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+}
+*/
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
 }
 
 /* Hero Section */
@@ -112,6 +122,7 @@ html {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero::before {
@@ -132,10 +143,11 @@ html {
     color: white;
     z-index: 2;
     position: relative;
+    text-align: center;
 }
 
 .hero h1 {
-    font-size: 3.0rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
@@ -146,6 +158,13 @@ html {
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cta-button {
@@ -167,7 +186,27 @@ html {
     transform: translateY(-2px);
 }
 
-/* Animations */
+/*
+.cta-button-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+*/
+
 @keyframes float {
 
     0%,
@@ -242,6 +281,10 @@ section {
     color: var(--text-secondary);
 }
 
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -255,6 +298,7 @@ section {
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .skill-card:hover {
@@ -262,9 +306,20 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
+.skill-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 .skill-card h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 /* Experience Section */
@@ -322,6 +377,7 @@ section {
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    border: 4px solid white;
 }
 
 .timeline-date {
@@ -340,6 +396,7 @@ section {
 .timeline-company {
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-style: italic;
 }
 
 /* Blog Section */
@@ -461,6 +518,17 @@ section {
     text-decoration-color: var(--primary-color);
 }
 
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
 /* Contact Section */
 .contact {
     background: var(--bg-dark);
@@ -475,17 +543,25 @@ section {
 
 .contact-info h3 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .contact-info p {
     margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
+/* Reduce space between contact items (was 1rem) */
 .contact-item {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
     gap: 1rem;
+}
+
+.contact-item .icon {
+    font-size: 1.2rem;
+    width: 30px;
 }
 
 .contact-form {
@@ -552,11 +628,28 @@ section {
     padding: 2rem 0;
 }
 
-/* General Utilities */
-.spaced-paragraph {
-    margin-bottom: 1.5rem;
+.footer p {
+    margin-bottom: 1rem;
 }
 
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Scroll animations */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -568,14 +661,33 @@ section {
     transform: translateY(0);
 }
 
-/* Section animations for loading */
-.fade-in-section {
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--gradient);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
+    visibility: hidden;
+    z-index: 1000;
 }
 
-/* ===== SMOOTH SCROLLING PAGE STYLES (long.html) ===== */
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
 
 /* Loading indicator */
 .loading {
@@ -592,107 +704,136 @@ section {
     margin: 2rem;
 }
 
-/* Styles specific to smooth-scroll-page (long.html) */
+/* ===== SMOOTH SCROLLING PAGE STYLES (long.html) ===== */
 .smooth-scroll-page main {
-    padding-top: 0;
-}
-
-.smooth-scroll-page section {
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    display: flex;
-    align-items: center;
-    scroll-margin-top: 80px;
+    padding-top: 0 !important;
 }
 
 .smooth-scroll-page #all-sections {
-    padding: 0;
-    max-width: none;
-    margin: 0;
-    width: 100%;
+    padding: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 
-/* Content wrapper for each section in smooth-scroll-page */
-.smooth-scroll-page section .hero-content,
-.smooth-scroll-page section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    width: 100%;
+.smooth-scroll-page section {
+    min-height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scroll-margin-top: 80px !important;
 }
 
-/* Background colors for smooth-scroll-page sections */
+.smooth-scroll-page section .container,
+.smooth-scroll-page section .hero-content {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+}
+
+.smooth-scroll-page section .hero-content {
+    text-align: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
 .smooth-scroll-page section#home {
-    background: var(--gradient);
-    color: white;
+    background: var(--gradient) !important;
+    color: white !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.smooth-scroll-page section#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Added animation here */
+.smooth-scroll-page section#home h1 {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.1 !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Change position font here */
+.smooth-scroll-page section#home p {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9 !important;
 }
 
 .smooth-scroll-page section#about {
-    background: var(--bg-secondary);
+    background: var(--bg-secondary) !important;
 }
 
 .smooth-scroll-page section#experience {
-    background: var(--bg-primary);
+    background: var(--bg-primary) !important;
 }
 
 .smooth-scroll-page section#blog {
-    background: var(--bg-secondary);
+    background: var(--bg-secondary) !important;
 }
 
 .smooth-scroll-page section#contact {
-    background: var(--bg-dark);
-    color: white;
+    background: var(--bg-dark) !important;
+    color: white !important;
 }
 
-/* ===== REGULAR PAGE STYLES ===== */
-
-/* Default section styles for individual pages */
-section {
-    padding: 5rem 0;
-    scroll-margin-top: 80px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--gradient);
-    border-radius: 2px;
+.smooth-scroll-page section#contact .section-title,
+.smooth-scroll-page section#contact h2,
+.smooth-scroll-page section#contact h3 {
+    color: white !important;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
     }
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .about-content {
@@ -723,6 +864,10 @@ section {
         font-size: 2rem;
     }
 
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
     .blog-grid {
         grid-template-columns: 1fr;
     }
@@ -732,10 +877,17 @@ section {
         -webkit-line-clamp: unset;
     }
 
-    /* Mobile adjustments for smooth scroll page */
-    .smooth-scroll-page section .hero-content,
-    .smooth-scroll-page section .container {
-        padding: 1rem;
+    .smooth-scroll-page section#home h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .smooth-scroll-page section#home p {
+        font-size: 1.3rem !important;
+    }
+
+    .smooth-scroll-page section .container,
+    .smooth-scroll-page section .hero-content {
+        padding: 1rem !important;
     }
 }
 

@@ -2,272 +2,239 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog — Mukharbek Organokov</title>
-    <link rel="canonical" href="blog.html" />
-    <!-- Canonical + favicon (good SEO/UX) -->
-    <!-- <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" /> -->
-    <link rel="stylesheet" href="src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Mukharbek Organokov Latest Posts">
+    <title>Blog - Mukharbek Organokov</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="experience.html">Experience</a></li>
-                <li><a href="blog.html" aria-current="page">Blog</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
-
-    <main id="main" style="padding-top: 80px;">
-
-        <!-- Blog Section -->
-        <section id="blog" class="blog">
-            <div class="container">
-                <h2 class="section-title fade-in">Latest Blog Posts</h2>
-                <div class="blog-grid">
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">🤖</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">The Future of AGI: Challenges and Opportunities</h3>
-                            <p class="blog-excerpt clamp">
-                                Explore the evolving landscape of artificial general intelligence — highlighting how
-                                existing systems excel at narrow tasks, while AGI aspires to human-like reasoning,
-                                adaptability, and cross-domain learning. AGI promises transformative breakthroughs
-                                in domains such as healthcare, scientific discovery, and personalized education,
-                                even as profound challenges remain in areas like real-time learning,
-                                ethical alignment, and safe deployment.
-
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Sep 15, 2025</span>
-                                <span>10 min read</span>
-                            </div>
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title fade-in">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Future of AGI: Challenges and Opportunities</h3>
+                        <p class="blog-excerpt clamp">
+                            Explore the evolving landscape of artificial general intelligence — highlighting how
+                            existing systems excel at narrow tasks, while AGI aspires to human-like reasoning,
+                            adaptability, and cross-domain learning. AGI promises transformative breakthroughs
+                            in domains such as healthcare, scientific discovery, and personalized education,
+                            even as profound challenges remain in areas like real-time learning,
+                            ethical alignment, and safe deployment. (in progress)
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Sep 15, 2025</span>
+                            <span>10 min read</span>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">🔬</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">Ethical AI: Bias Detection in Deep Learning</h3>
-                            <p class="blog-excerpt clamp">
-                                Understanding and mitigating bias in deep learning is fundamental to building fair,
-                                inclusive AI systems. Bias can manifest at different stages—unbalanced class
-                                distributions, misrepresentative training data, and flawed model assumptions.
-                                Common mitigation strategies include <strong>pre-processing</strong>
-                                (e.g., re-sampling or re-weighting data), <strong>in-processing</strong>
-                                (e.g., fairness-aware training and adversarial debiasing), and
-                                <strong>post-processing</strong> adjustments to outputs. Regular auditing,
-                                monitoring, and explainability are also vital for maintaining fairness over
-                                time, supported by tools like AIF360 and fairness dashboards.
-
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Aug 31, 2025</span>
-                                <span>10 min read</span>
-                            </div>
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🔬</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Ethical AI: Bias Detection in Deep Learning</h3>
+                        <p class="blog-excerpt clamp">
+                            Understanding and mitigating bias in deep learning is fundamental to building fair,
+                            inclusive AI systems. Bias can manifest at different stages—unbalanced class
+                            distributions, misrepresentative training data, and flawed model assumptions.
+                            Common mitigation strategies include <strong>pre-processing</strong>
+                            (e.g., re-sampling or re-weighting data), <strong>in-processing</strong>
+                            (e.g., fairness-aware training and adversarial debiasing), and
+                            <strong>post-processing</strong> adjustments to outputs. Regular auditing,
+                            monitoring, and explainability are also vital for maintaining fairness over
+                            time, supported by tools like AIF360 and fairness dashboards. (in progress)
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Aug 31, 2025</span>
+                            <span>10 min read</span>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">🧠</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">Circassian DNA Chatbot</h3>
-                            <p class="blog-excerpt clamp">
-                                A hands-on guide to building a production-ready chatbot on the Circassian DNA
-                                project—illustrating how robust MLOps pipelines power each stage from training to
-                                deployment. Learn how we streamlined model management, versioning, and continuous
-                                integration for real-time, culturally-aware interactions.
-
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Aug 30, 2025</span>
-                                <span>15 min read</span>
-                            </div>
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🧠</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Circassian DNA Chatbot</h3>
+                        <p class="blog-excerpt clamp">
+                            A hands-on guide to building a production-ready chatbot on the Circassian DNA
+                            project—illustrating how robust MLOps pipelines power each stage from training to
+                            deployment. Learn how we streamlined model management, versioning, and continuous
+                            integration for real-time, culturally-aware interactions. (in progress)
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Aug 30, 2025</span>
+                            <span>15 min read</span>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
+                <article class="blog-card fade-in">
+                    <div class="blog-image">⚡</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Ultimate Throughput with vLLM</h3>
+                        <p class="blog-excerpt clamp">
+                            Discover how <a href="https://docs.vllm.ai/en/latest/" target="_blank">vLLM</a>—powered
+                            by
+                            its virtual memory-inspired <a href="https://arxiv.org/abs/2501.01005"
+                                target="_blank">PagedAttention</a> engine — significantly reduces memory
+                            fragmentation
+                            in <a
+                                href="https://medium.com/%40tam.tamanna18/vllm-and-tools-for-optimizing-large-language-model-performance-c4b7a1273bee"
+                                target="_blank">KV caches</a>, enabling near-zero waste and up to a <a
+                                href="https://medium.com/%40christopher.keibel.90/why-you-might-want-to-use-vllm-for-your-open-source-llm-serving-5c2836432e81"
+                                target="_blank">2-4 times</a> throughput improvement over SOTA inference engines
+                            like <a href="https://github.com/NVIDIA/FasterTransformer"
+                                target="_blank">FasterTransformer</a>, especially with longer contexts and larger
+                            models, making it the new standard for high-performance LLM serving. vLLM inherently
+                            uses
+                            optimized CUDA-backed kernels—such as <a href="https://arxiv.org/abs/2205.14135"
+                                target="_blank">
+                                FlashAttention</a> and <a href="https://arxiv.org/abs/2501.01005"
+                                target="_blank">FlashInfer</a> — to achieve top-tier <a
+                                href="https://docs.vllm.ai/en/stable/getting_started/installation/gpu.html"
+                                target="_blank">GPU</a> utilization without requiring teams to write custom
+                            kernels. FlashInfer delivers substantial latency improvements for GPU-serving
+                            LLMs—including
+                            a 29-69% reduction in inter-token latency compared to Triton backends, 28-30% lower
+                            latency
+                            for long context inference, and a 13-17% performance boost in parallel generation
+                            scenarios.
 
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">⚡</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">Ultimate Throughput with vLLM</h3>
-                            <p class="blog-excerpt clamp">
-                                Discover how <a href="https://docs.vllm.ai/en/latest/" target="_blank">vLLM</a>—powered
-                                by
-                                its virtual memory-inspired <a href="https://arxiv.org/abs/2501.01005"
-                                    target="_blank">PagedAttention</a> engine — significantly reduces memory
-                                fragmentation
-                                in <a
-                                    href="https://medium.com/%40tam.tamanna18/vllm-and-tools-for-optimizing-large-language-model-performance-c4b7a1273bee"
-                                    target="_blank">KV caches</a>, enabling near-zero waste and up to a <a
-                                    href="https://medium.com/%40christopher.keibel.90/why-you-might-want-to-use-vllm-for-your-open-source-llm-serving-5c2836432e81"
-                                    target="_blank">2-4 times</a> throughput improvement over SOTA inference engines
-                                like <a href="https://github.com/NVIDIA/FasterTransformer"
-                                    target="_blank">FasterTransformer</a>, especially with longer contexts and larger
-                                models, making it the new standard for high-performance LLM serving. vLLM inherently
-                                uses
-                                optimized CUDA-backed kernels—such as <a href="https://arxiv.org/abs/2205.14135"
-                                    target="_blank">
-                                    FlashAttention</a> and <a href="https://arxiv.org/abs/2501.01005"
-                                    target="_blank">FlashInfer</a> — to achieve top-tier <a
-                                    href="https://docs.vllm.ai/en/stable/getting_started/installation/gpu.html"
-                                    target="_blank">GPU</a> utilization without requiring teams to write custom
-                                kernels. FlashInfer delivers substantial latency improvements for GPU-serving
-                                LLMs—including
-                                a 29-69% reduction in inter-token latency compared to Triton backends, 28-30% lower
-                                latency
-                                for long context inference, and a 13-17% performance boost in parallel generation
-                                scenarios.
+                            vLLM runs standard Hugging Face models, integrates seamlessly with PyTorch, and
+                            supports OpenAI-compatible APIs — so you don't need to rebuild; just swap in a better
+                            engine. <a href="https://docs.vllm.ai/en/v0.8.5/design/huggingface_integration.html"
+                                target="_blank">Hugging Face integration</a> confirms that vLLM can run standard
+                            Hugging
+                            Face models without rewriting your workflows. <a
+                                href="https://pytorch.org/blog/vllm-joins-pytorch/" target="_blank">PyTorch
+                                ecosystem integration</a> shows it fits seamlessly into the PyTorch ecosystem and
+                            supports diverse hardware backends with minimal hassle. And a built-in <a
+                                href="https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html"
+                                target="_blank">OpenAI-compatible server</a> demonstrates vLLM's ability to
+                            mimic the OpenAI API, enabling plug-and-play usage in existing setups.
 
-                                vLLM runs standard Hugging Face models, integrates seamlessly with PyTorch, and
-                                supports OpenAI-compatible APIs — so you don't need to rebuild; just swap in a better
-                                engine. <a href="https://docs.vllm.ai/en/v0.8.5/design/huggingface_integration.html"
-                                    target="_blank">Hugging Face integration</a> confirms that vLLM can run standard
-                                Hugging
-                                Face models without rewriting your workflows. <a
-                                    href="https://pytorch.org/blog/vllm-joins-pytorch/" target="_blank">PyTorch
-                                    ecosystem integration</a> shows it fits seamlessly into the PyTorch ecosystem and
-                                supports diverse hardware backends with minimal hassle. And a built-in <a
-                                    href="https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html"
-                                    target="_blank">OpenAI-compatible server</a> demonstrates vLLM's ability to
-                                mimic the OpenAI API, enabling plug-and-play usage in existing setups.
-
-                                In less than a year, vLLM accelerated from 30K to 50K stars on GitHub — highlighting
-                                its fast-moving momentum, robust open-source growth, and deep support from the developer
-                                community.
-
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Aug 25, 2025</span>
-                                <span>15 min read</span>
-                            </div>
+                            In less than a year, vLLM accelerated from 30K to 50K stars on GitHub — highlighting
+                            its fast-moving momentum, robust open-source growth, and deep support from the developer
+                            community.
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Aug 25, 2025</span>
+                            <span>15 min read</span>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">🚀</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">KServe Meets vLLM: Cloud-Native Scalable LLM Serving on K8s</h3>
-                            <p class="blog-excerpt clamp">
-                                <a href="https://kserve.github.io/website/" target="_blank">KServe</a> is a
-                                Kubernetes-native model serving platform offering enterprise-grade capabilities
-                                for predictive and generative AI—including autoscaling, ModelMesh routing, and
-                                standardized
-                                APIs across Hugging Face and <a href="https://docs.vllm.ai/en/latest/"
-                                    target="_blank">vLLM</a>
-                                models. Since the <a
-                                    href="https://kserve.github.io/website/0.13/blog/articles/2024-05-15-KServe-0.13-release/"
-                                    target="_blank">v0.13 release</a>, KServe officially supports vLLM as a backend
-                                runtime,
-                                enabling high-performance LLM serving within the Kubernetes ecosystem. With the <a
-                                    href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
-                                    target="_blank">v0.15 release</a>, KServe added advanced LLM-specific features
-                                including
-                                distributed KV caching via <a href="https://lmcache.ai/" target="_blank">LMCache</a>,
-                                LLM-aware autoscaling using KEDA, and integration with
-                                the Envoy AI Gateway for intelligent routing and traffic management.
+                <article class="blog-card fade-in">
+                    <div class="blog-image">🚀</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">KServe Meets vLLM: Cloud-Native Scalable LLM Serving on K8s</h3>
+                        <p class="blog-excerpt clamp">
 
-                                KServe supports a plug-and-play architecture using custom ServingRuntimes and
-                                InferenceService CRDs, enabling optimized LLM serving via vLLM backends across GPUs
-                                (NVIDIA,
-                                AMD, Intel) and CPUs. Seamless integration matters - leverage vLLM's high-efficiency
-                                engine without rebuilding your stack while KServe handles orchestration, scaling,
-                                and
-                                routing. Features like LMCache maximize GPU throughput critical for LLMs. Offloading
-                                of
-                                KV-cache layers reduces inference costs and helps meet SLOs for latency and
-                                throughput.
+                            <a href="https://kserve.github.io/website/" target="_blank">KServe</a> is a
+                            Kubernetes-native model serving platform offering enterprise-grade capabilities
+                            for predictive and generative AI—including autoscaling, ModelMesh routing, and
+                            standardized APIs across Hugging Face and <a href="https://docs.vllm.ai/en/latest/"
+                                target="_blank">vLLM</a>
+                            models. Since the <a
+                                href="https://kserve.github.io/website/0.13/blog/articles/2024-05-15-KServe-0.13-release/"
+                                target="_blank">v0.13 release</a>, KServe officially supports vLLM as a backend
+                            runtime, enabling high-performance LLM serving within the Kubernetes ecosystem.
+                            With the <a
+                                href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
+                                target="_blank">v0.15 release</a>, KServe added advanced LLM-specific features
+                            including
+                            distributed KV caching via <a href="https://lmcache.ai/" target="_blank">LMCache</a>,
+                            LLM-aware autoscaling using KEDA, and integration with
+                            the Envoy AI Gateway for intelligent routing and traffic management.
 
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Aug 22, 2025</span>
-                                <span>15 min read</span>
-                            </div>
+                            KServe supports a plug-and-play architecture using custom ServingRuntimes and
+                            InferenceService CRDs, enabling optimized LLM serving via vLLM backends across GPUs
+                            (NVIDIA, AMD, Intel) and CPUs. Seamless integration matters - leverage vLLM's
+                            high-efficiency engine without rebuilding your stack while KServe handles orchestration,
+                            scaling, and routing. Features like LMCache maximize GPU throughput critical for LLMs.
+                            Offloading of KV-cache layers reduces inference costs and helps meet SLOs for latency and
+                            throughput. (in progress)
+
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Aug 22, 2025</span>
+                            <span>15 min read</span>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="blog-card fade-in">
-                        <div class="blog-image">☁️</div>
-                        <div class="blog-content">
-                            <h3 class="blog-title">Kubeflow: Cloud-Native MLOps on K8s for Scalable ML Workflows</h3>
-                            <p class="blog-excerpt clamp">
-                                <a href="https://www.kubeflow.org/" target="_blank">Kubeflow</a> is a modular,
-                                open-source
-                                MLOps platform built on Kubernetes, designed to orchestrate the entire machine
-                                learning
-                                lifecycle — from notebooks and pipeline orchestration to distributed training,
-                                hyperparameter tuning, and model serving via <a href="https://kserve.github.io/website/"
-                                    target="_blank">KServe</a>. Its modular
-                                architecture allows you to adopt only the
-                                components you need. Kubeflow <a href="https://www.kubeflow.org/docs/components/"
-                                    target="_blank">supports</a> Notebooks, Pipelines, Training Operators, Katib,
-                                and KServe — covering all stages from experimentation to deployment. <a
-                                    href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
-                                    target="_blank">Kubeflow Pipelines</a> enables building portable,
-                                container-based
-                                workflows deployable across any Kubernetes environment.
+                <article class="blog-card fade-in">
+                    <div class="blog-image">☁️</div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Kubeflow: Cloud-Native MLOps on K8s for Scalable ML Workflows</h3>
+                        <p class="blog-excerpt clamp">
 
-                                As a CNCF-incubated project backed by Google, Red Hat, IBM, NVIDIA, and others,
-                                Kubeflow
-                                delivers enterprise-grade scalability, hybrid-cloud portability, and robust
-                                governance.
+                            <a href="https://www.kubeflow.org/" target="_blank">Kubeflow</a> is a modular,
+                            open-source MLOps platform built on Kubernetes, designed to orchestrate the entire
+                            machine learning lifecycle — from notebooks and pipeline orchestration
+                            to distributed training, hyperparameter tuning, and model serving via <a
+                                href="https://kserve.github.io/website/" target="_blank">KServe</a>. Its modular
+                            architecture allows you to adopt only the
+                            components you need. Kubeflow <a href="https://www.kubeflow.org/docs/components/"
+                                target="_blank">supports</a> Notebooks, Pipelines, Training Operators, Katib,
+                            and KServe — covering all stages from experimentation to deployment. <a
+                                href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
+                                target="_blank">Kubeflow Pipelines</a> enables building portable,
+                            container-based workflows deployable across any Kubernetes environment.
 
-                                For teams with Kubernetes-first infrastructure, Kubeflow offers a production-ready
-                                foundation for reproducible, scalable ML workflows — without stitching together
-                                disparate
-                                tools. Moreover, Kubeflow's tight integration with Kubernetes enables efficient
-                                resource
-                                management—especially for GPU workloads—making it ideal for large-scale ML
-                                operations.
+                            As a CNCF-incubated project backed by Google, Red Hat, IBM, NVIDIA, and others,
+                            Kubeflow delivers enterprise-grade scalability, hybrid-cloud portability,
+                            and robust governance.
 
-                                For ML teams focused mainly on experiment tracking, model versioning, and
-                                ease-of-use,
-                                <a href="https://mlflow.org/" target="_blank">MLflow</a> is a <a
-                                    href="https://www.zenml.io/blog/kubeflow-vs-mlflow" target="_blank">great MLOps
-                                    solution</a>.
+                            For teams with Kubernetes-first infrastructure, Kubeflow offers a production-ready
+                            foundation for reproducible, scalable ML workflows — without stitching together
+                            disparate tools. Moreover, Kubeflow's tight integration with Kubernetes enables
+                            efficient resource management—especially for GPU workloads—making it ideal for
+                            large-scale ML operations.
 
-                                ... in progress
-                            </p>
-                            <button class="toggle-excerpt" aria-expanded="false">Read more</button>
-                            <div class="blog-meta">
-                                <span>Aug 20, 2025</span>
-                                <span>15 min read</span>
-                            </div>
+                            For ML teams focused mainly on experiment tracking, model versioning, and
+                            ease-of-use,
+                            <a href="https://mlflow.org/" target="_blank">MLflow</a> is a <a
+                                href="https://www.zenml.io/blog/kubeflow-vs-mlflow" target="_blank">great MLOps
+                                solution</a>.
+
+                        </p>
+                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <div class="blog-meta">
+                            <span>Aug 20, 2025</span>
+                            <span>15 min read</span>
                         </div>
-                    </article>
-
-                </div>
+                    </div>
+                </article>
             </div>
-        </section>
-
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -276,9 +243,10 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script type="module" src="src/js/main.js"></script>
-
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

@@ -2,88 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact — Mukharbek Organokov</title>
-    <link rel="canonical" href="contact.html" />
-    <!-- Canonical + favicon (good SEO/UX) -->
-    <!-- <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" /> -->
-    <link rel="stylesheet" href="src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mukharbek Organokov - AI Engineer">
+    <title>Contact - Mukharbek Organokov</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" aria-current="page">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always eager to explore artificial intelligence topics like AI, AGI advancements, LLM
+                        architectures, MLOps tooling, and machine learning methods — and to discuss potential
+                        collaborations along the way.
+                    </p>
 
-    <main id="main" style="padding-top: 80px;">
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info fade-in">
-                        <h3>Let's Connect</h3>
-                        <p>
-                            I'm always eager to explore artificial intelligence topics like AI, AGI advancements, LLM
-                            architectures, MLOps tooling, and machine learning methods — and to discuss potential
-                            collaborations along the way.
-                        </p>
-
-                        <div class="contact-item">
-                            <span>📧</span>
-                            <span>mukharbek.organokov@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span>💼</span>
-                            <span>https://www.linkedin.com/in/circassia/</span>
-                        </div>
-                        <div class="contact-item">
-                            <span>🐙</span>
-                            <span>https://github.com/kabartay</span>
-                        </div>
-                        <div class="contact-item">
-                            <span>📍</span>
-                            <span>Paris, FR</span>
-                        </div>
+                    <div class="contact-item">
+                        <div class="icon">📧</div>
+                        <span>mukharbek.organokov@gmail.com</span>
                     </div>
-
-                    <form class="contact-form fade-in">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="your.email@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                    <div class="contact-item">
+                        <div class="icon">💼</div>
+                        <span>https://www.linkedin.com/in/circassia/</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">🐙</div>
+                        <span>https://github.com/kabartay</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <span>Paris, FR</span>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-    </main>
+                <form class="contact-form fade-in">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -92,9 +83,10 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script type="module" src="src/js/main.js"></script>
-
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

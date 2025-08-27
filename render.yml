@@ -19,9 +19,6 @@ services:
         source: /experience
         destination: /experience.html
       - type: rewrite
-        source: /home
-        destination: /home.html
-      - type: rewrite
         source: /
         destination: /index.html
     headers:

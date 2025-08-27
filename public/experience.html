@@ -2,143 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Experience — Mukharbek Organokov</title>
-    <link rel="canonical" href="experience.html" />
-    <!-- Canonical + favicon (good SEO/UX) -->
-    <!-- <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" /> -->
-    <link rel="stylesheet" href="src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience - Mukharbek Organokov Career Journey">
+    <title>Experience - Mukharbek Organokov</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="experience.html" aria-current="page">Experience</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
-
-    <main id="main" style="padding-top: 80px;">
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="container">
-                <h2 class="section-title fade-in">Career Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2025 - Present</div>
-                            <h3 class="timeline-title">Senior AI Engineer</h3>
-                            <div class="timeline-company">Stealth</div>
-                            <p>
-                                Building robust and scalable AI infrastructure to accelerate training, fine-tuning,
-                                and deployment—while reducing cost, eliminating bottlenecks, and ensuring zero downtime.
-                            </p>
-                        </div>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Career Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title">Senior AI Engineer</h3>
+                        <div class="timeline-company">Stealth</div>
+                        <p>Building robust and scalable AI infrastructure to accelerate training, fine-tuning, and
+                            deployment — while reducing cost, eliminating bottlenecks, and ensuring zero downtime.</p>
                     </div>
+                </div>
 
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2023 - 2025</div>
-                            <h3 class="timeline-title">Machine Learning Engineer</h3>
-                            <div class="timeline-company">Cisco Systems</div>
-                            <p>
-                                Designed and optimized scalable MLOps infrastructurefor seamless deployment, monitoring,
-                                and
-                                lifecycle management of ML systems. Developed AI models for cybersecurity threat
-                                detection
-                                and automated network configuration management. Architeced multi-agent LLMs systems.
-                                Supervised a PhD intern and co-authored a publications, and secured a patent in applied
-                                AI.
-                            </p>
-                        </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3 class="timeline-title">Machine Learning Engineer</h3>
+                        <div class="timeline-company">Cisco Systems</div>
+                        <p>Designed and optimized scalable MLOps infrastructure for seamless deployment, monitoring, and
+                            lifecycle management of ML systems. Developed AI models for cybersecurity threat detection
+                            and automated network configuration management. Architected multi-agent LLMs systems.
+                            Supervised a PhD intern and co-authored publications, and secured a patent in applied AI.
+                        </p>
                     </div>
+                </div>
 
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022 - 2023</div>
-                            <h3 class="timeline-title">MLOps Engineer</h3>
-                            <div class="timeline-company">StartupAI</div>
-                            <p>
-                                Designed and implemented MLOps benchmarking tools - leveraging experiment tracking and
-                                pipeline cataloging — to evaluate and optimize ML workflows across internet security,
-                                brand
-                                safety, digital media trust, and contextual Ad targeting.
-                            </p>
-                        </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">MLOps Engineer</h3>
+                        <div class="timeline-company">StartupAI</div>
+                        <p>Designed and implemented MLOps benchmarking tools - leveraging experiment tracking and
+                            pipeline cataloging — to evaluate and optimize ML workflows across internet security, brand
+                            safety, digital media trust, and contextual Ad targeting.</p>
                     </div>
+                </div>
 
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2020 - 2022</div>
-                            <h3 class="timeline-title">Data Scientist</h3>
-                            <div class="timeline-company">sense4data</div>
-                            <p>
-                                Engineered and deployed end-to-end ML solutions - from financial security and fraud
-                                detection to sports forecasting, computer vision ailway tie defect detection,
-                                and an NLP system for resume-job offer matching. Enhanced anomaly detection in
-                                transactional data and managed the full pipeline: data preprocessing, feature
-                                engineering,
-                                model training, evaluation, and production deployment.
-                            </p>
-                        </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3 class="timeline-title">Data Scientist</h3>
+                        <div class="timeline-company">sense4data</div>
+                        <p>Engineered and deployed end-to-end ML solutions - from financial security and fraud detection
+                            to sports forecasting, computer vision railway tie defect detection, and an NLP system for
+                            resume-job offer matching. Enhanced anomaly detection in transactional data and managed the
+                            full pipeline: data preprocessing, feature engineering, model training, evaluation, and
+                            production deployment.</p>
                     </div>
+                </div>
 
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2019 - 2019</div>
-                            <h3 class="timeline-title">Data Scientist</h3>
-                            <div class="timeline-company">The Alan Turing Institute</div>
-                            <p>
-                                Contributed to applied research projects: shallow gas detection from seabed seismic
-                                imagery
-                                (BGS); multi-sensor intelligent machining process monitoring (AMRC, co-facilitator);
-                                semantic and instance segmentation of 3D point clouds (SenSat), analysis of network
-                                metrics on customer perception of reliability (Telus).
-                            </p>
-                        </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2019</div>
+                        <h3 class="timeline-title">Data Scientist</h3>
+                        <div class="timeline-company">The Alan Turing Institute</div>
+                        <p>Contributed to applied research projects: shallow gas detection from seabed seismic imagery
+                            (BGS); multi-sensor intelligent machining process monitoring (AMRC, co-facilitator);
+                            semantic and instance segmentation of 3D point clouds (SenSat), analysis of network metrics
+                            on customer perception of reliability (Telus).</p>
                     </div>
+                </div>
 
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2016 - 2019</div>
-                            <h3 class="timeline-title">PhD Researcher</h3>
-                            <div class="timeline-company">CNRS</div>
-                            <p>
-                                Pursued doctoral research in multi-messenger astrophysics, investigating the joint
-                                detection
-                                of neutrinos and gamma rays through experiments such as ANTARES, HAWC, and KM3NeT.
-                                Focused on data analysis, detector performance optimization, and the development of
-                                advanced methodologies for high-energy particle detection.
-                            </p>
-                        </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2019</div>
+                        <h3 class="timeline-title">PhD Researcher</h3>
+                        <div class="timeline-company">CNRS</div>
+                        <p>Pursued doctoral research in multi-messenger astrophysics, investigating the joint detection
+                            of neutrinos and gamma rays through experiments such as ANTARES, HAWC, and KM3NeT. Focused
+                            on data analysis, detector performance optimization, and the development of advanced
+                            methodologies for high-energy particle detection.</p>
                     </div>
-
-
                 </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -147,9 +118,10 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script type="module" src="src/js/main.js"></script>
-
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>
