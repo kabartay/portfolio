@@ -2,101 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About — Mukharbek Organokov</title>
-    <link rel="canonical" href="about.html" />
-    <!-- Canonical + favicon (good SEO/UX) -->
-    <!-- <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" /> -->
-    <link rel="stylesheet" href="src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Mukharbek Organokov - AI Engineer">
+    <title>About - Mukharbek Organokov</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" aria-current="page">About</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>I'm an AI/ML Engineer with a strong background in MLOps and experience delivering
+                        production-grade ML systems. I've designed and deployed AI solutions for cybersecurity,
+                        financial security, network intelligence, and large-scale data analytics, while contributing to
+                        publications, patents, and mentoring AI talents.</p>
 
-    <main id="main" style="padding-top: 80px;">
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title fade-in">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text fade-in">
-                        <p class="spaced-paragraph">
-                            I'm an AI/ML Engineer with a strong background in MLOps and experience delivering
-                            production-grade ML systems. I've designed and deployed AI solutions for cybersecurity,
-                            financial security, network intelligence, and large-scale data analytics, while
-                            contributing to publications, patents, and mentoring AI talents.
-                        </p>
+                    <p>I believe AI must be <strong>responsible</strong>, <strong>resilient</strong>, and
+                        <strong>sustainable</strong>. My goal is to design robust, adaptive, and climate-aware
+                        infrastructure — minimizing wasted power and compute, enabling scalable, trustworthy, and
+                        energy-efficient innovation for a sustainable future.
+                    </p>
 
-                        <p class="spaced-paragraph">
-                            I believe AI must be <strong>responsible</strong>, <strong>resilient</strong>,
-                            and <strong>sustainable</strong>. My goal is to design robust, adaptive, and climate-aware
-                            infrastructure — minimizing wasted power and compute, enabling scalable, trustworthy,
-                            and energy-efficient innovation for a sustainable future.
-                        </p>
-
-                        <p class="spaced-paragraph">
-                            Beyond industry, I co-founded Circassian DNA, a non-profit initiative reconnecting
-                            the global Circassian diaspora through data-driven genealogy and genetic insights. I see
-                            the power of AI not only to solve complex challenges, but also for fostering
-                            human connection, preserving cultural heritage, and driving meaningful global impact.
-                        </p>
+                    <p>Beyond industry, I co-founded Circassian DNA, a non-profit initiative reconnecting the global
+                        Circassian diaspora through data-driven genealogy and genetic insights. I see the power of AI
+                        not only to solve complex challenges, but also for fostering human connection, preserving
+                        cultural heritage, and driving meaningful global impact.</p>
+                </div>
+                <div class="skills fade-in">
+                    <div class="skill-card">
+                        <div class="icon">🐍</div>
+                        <h4>Programming</h4>
+                        <p>Python, Rust, SQL, Bash</p>
                     </div>
-                    <div class="skills fade-in">
-
-                        <div class="skill-card">
-                            <h4>Programming</h4>
-                            <p>Python, Rust, SQL, Bash</p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h4>MLOps & Infra</h4>
-                            <p>Docker, Kubernetes, Kubeflow, MLFlow, KServe, AWS, GitOps, ArgoCD, Helm, FastAPI, Flask
-                            </p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h4>Machine Learning</h4>
-                            <p>XGBoost, LightGBM, Ray, Scikit-learn, ONNX</p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h4>Deep Learning</h4>
-                            <p>PyTorch, TensorFlow, Keras, Transformers, GNN, GRU</p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h4>Gen AI</h4>
-                            <p>LLM, Hugging Face, LangChain, LlamaIndex, Pinecone, Fine-tuning</p>
-                        </div>
-
-                        <div class="skill-card">
-                            <h4>Data & Analytics</h4>
-                            <p>Pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly</p>
-                        </div>
-
+                    <div class="skill-card">
+                        <div class="icon">🚀</div>
+                        <h4>MLOps & Infra</h4>
+                        <p>Docker, Kubernetes, Kubeflow, MLFlow, KServe, AWS, GitOps, ArgoCD, Helm, FastAPI, Flask</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🤖</div>
+                        <h4>Machine Learning</h4>
+                        <p>XGBoost, LightGBM, Ray, Scikit-learn, ONNX</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🧠</div>
+                        <h4>Deep Learning</h4>
+                        <p>PyTorch, TensorFlow, Keras, Transformers, GNN, GRU</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🔮</div>
+                        <h4>Gen AI</h4>
+                        <p>LLM, Hugging Face, LangChain, LlamaIndex, Pinecone, Fine-tuning</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">📊</div>
+                        <h4>Data & Analytics</h4>
+                        <p>Pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -105,9 +91,10 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
-    <script type="module" src="src/js/main.js"></script>
-
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

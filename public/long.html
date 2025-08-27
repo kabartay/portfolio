@@ -4,37 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>All-in-One — Mukharbek Organokov</title>
+    <title>Portfolio — Mukharbek Organokov</title>
+    <meta name="description" content="Complete Portfolio - Mukharbek Organokov AI Engineer">
     <link rel="stylesheet" href="src/css/style.css" />
-    <style>
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        section {
-            scroll-margin-top: 80px;
-        }
-    </style>
 </head>
 
-<body>
-    <!-- Same navbar, but fragment links -->
+<body class="smooth-scroll-page">
     <nav class="navbar" role="navigation" aria-label="Main">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
-                <li><a href="#home" aria-current="page">Home</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
-    <main id="main" style="padding-top:80px;">
-        <div id="all-sections" class="container"></div>
+    <main id="main">
+        <div class="loading" id="loading-indicator">Loading content...</div>
+        <div id="all-sections"></div>
     </main>
 
     <footer class="footer">
@@ -43,7 +35,10 @@
         </div>
     </footer>
 
-    <script type="module" src="src/js/aggregate.js"></script>
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <script src="src/js/aggregate.js"></script>
 </body>
 
 </html>

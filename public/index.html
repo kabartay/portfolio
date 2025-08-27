@@ -2,42 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home — Mukharbek Organokov</title>
-    <link rel="canonical" href="index.html" />
-    <!-- Canonical + favicon (good SEO/UX) -->
-    <!-- <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" /> -->
-    <link rel="stylesheet" href="src/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Engineer Portfolio - Machine Learning & Deep Learning Expert">
+    <meta name="keywords" content="AI Engineer, Machine Learning, Deep Learning, Portfolio, Data Science">
+    <title>Mukharbek Organokov - AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
-    <!-- Skip link for keyboard users -->
-    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
-            <ul class="nav-links">
-                <li><a href="index.html" aria-current="page">Home</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
-    <!-- Fragmented with IDs -->
-    <main id="main" style="padding-top:80px">
-        <section id="home" class="hero">…</section>
-        <section id="about" class="about">…</section>
-        <section id="experience">…</section>
-        <section id="blog" class="about">…</section>
-        <section id="contact" class="contact">…</section>
-    </main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mukharbek Organokov</h1>
+            <p>Senior AI Engineer</p>
+            <div class="cta-buttons">
+                <a href="about.html" class="cta-button">Discover My Work</a>
+                <a href="long.html" class="cta-button-secondary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -46,8 +46,10 @@
         </div>
     </footer>
 
-    <script type="module" src="src/js/main.js"></script>
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>

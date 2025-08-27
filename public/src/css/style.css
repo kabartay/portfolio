@@ -26,9 +26,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 /* Navigation */
@@ -75,7 +75,8 @@ html {
     position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -90,8 +91,25 @@ html {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
+}
+
+.portfolio-link {
+    background: rgba(102, 126, 234, 0.1) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
 }
 
 /* Hero Section */
@@ -102,6 +120,7 @@ html {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero::before {
@@ -122,22 +141,28 @@ html {
     color: white;
     z-index: 2;
     position: relative;
+    text-align: center;
 }
 
-/* h1: 3.5rem vs p: 1.25rem*/
 .hero h1 {
-    font-size: 3.0rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
 
-/* h1: 3.5rem vs p: 1.25rem*/
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cta-button {
@@ -159,7 +184,25 @@ html {
     transform: translateY(-2px);
 }
 
-/* Floating particles animation */
+.cta-button-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
 @keyframes float {
 
     0%,
@@ -187,6 +230,7 @@ html {
 /* Section Styles */
 section {
     padding: 5rem 0;
+    scroll-margin-top: 80px;
 }
 
 .container {
@@ -233,6 +277,10 @@ section {
     color: var(--text-secondary);
 }
 
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -246,6 +294,7 @@ section {
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .skill-card:hover {
@@ -253,9 +302,20 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
+.skill-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 .skill-card h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 /* Experience Section */
@@ -313,6 +373,7 @@ section {
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    border: 4px solid white;
 }
 
 .timeline-date {
@@ -331,20 +392,18 @@ section {
 .timeline-company {
     color: var(--text-light);
     margin-bottom: 1rem;
+    font-style: italic;
 }
 
-/* Blog Section - Fixed version */
+/* Blog Section */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Clean 3-column grid */
     gap: 2rem;
     margin-top: 2rem;
     align-items: stretch;
-    /* Make all cards same height */
 }
 
-/* Each blog card should stay in its grid cell */
 .blog-card {
     background: white;
     border-radius: 15px;
@@ -353,10 +412,7 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* height: fit-content;
-    /* Allow natural height */
     height: 100%;
-    /* Take full available height */
 }
 
 .blog-card:hover {
@@ -373,7 +429,6 @@ section {
     color: white;
     font-size: 3rem;
     flex-shrink: 0;
-    /* Don't shrink the image area */
 }
 
 .blog-content {
@@ -381,7 +436,6 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Take remaining space */
     height: 100%;
 }
 
@@ -391,10 +445,8 @@ section {
     margin-bottom: 0.5rem;
     color: var(--text-primary);
     min-height: 2.4rem;
-    /* Reserve space for 2 lines of title */
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Limit title to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.2;
@@ -405,15 +457,12 @@ section {
     font-size: 0.9rem;
     line-height: 1.6;
     flex-grow: 1;
-    /* Take available space */
     margin-bottom: 1rem;
 }
 
-/* Clamp: show only the first N lines until expanded */
 .blog-excerpt.clamp {
     display: -webkit-box;
     -webkit-line-clamp: 4;
-    /* Show 4 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -424,7 +473,6 @@ section {
     overflow: visible;
 }
 
-/* Read more / Show less button */
 .toggle-excerpt {
     margin-top: 1rem;
     background: none;
@@ -437,7 +485,6 @@ section {
     font-size: 0.85rem;
     font-weight: 500;
     flex-shrink: 0;
-    /* Don't shrink the button */
 }
 
 .toggle-excerpt:hover {
@@ -449,16 +496,13 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    /* Push to bottom */
     padding-top: 1rem;
     color: var(--text-light);
     font-size: 0.8rem;
     border-top: 1px solid #f0f0f0;
     flex-shrink: 0;
-    /* Don't shrink the meta area */
 }
 
-/* Links inside blog content */
 .blog-content a:not(.toggle-excerpt) {
     color: inherit;
     text-decoration: underline;
@@ -470,6 +514,16 @@ section {
     text-decoration-color: var(--primary-color);
 }
 
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
 
 /* Contact Section */
 .contact {
@@ -485,6 +539,12 @@ section {
 
 .contact-info h3 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 .contact-item {
@@ -492,6 +552,11 @@ section {
     align-items: center;
     margin-bottom: 1rem;
     gap: 1rem;
+}
+
+.contact-item .icon {
+    font-size: 1.2rem;
+    width: 30px;
 }
 
 .contact-form {
@@ -558,14 +623,207 @@ section {
     padding: 2rem 0;
 }
 
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Scroll animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--gradient);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+/* Loading indicator */
+.loading {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    background: var(--bg-secondary);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+/* ===== SMOOTH SCROLLING PAGE STYLES (long.html) ===== */
+.smooth-scroll-page main {
+    padding-top: 0 !important;
+}
+
+.smooth-scroll-page #all-sections {
+    padding: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.smooth-scroll-page section {
+    min-height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scroll-margin-top: 80px !important;
+}
+
+.smooth-scroll-page section .container,
+.smooth-scroll-page section .hero-content {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+}
+
+.smooth-scroll-page section .hero-content {
+    text-align: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.smooth-scroll-page section#home {
+    background: var(--gradient) !important;
+    color: white !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.smooth-scroll-page section#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+.smooth-scroll-page section#home h1 {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.1 !important;
+}
+
+.smooth-scroll-page section#home p {
+    font-size: 1.25rem !important;
+    margin-bottom: 2rem !important;
+    opacity: 0.9 !important;
+}
+
+.smooth-scroll-page section#about {
+    background: var(--bg-secondary) !important;
+}
+
+.smooth-scroll-page section#experience {
+    background: var(--bg-primary) !important;
+}
+
+.smooth-scroll-page section#blog {
+    background: var(--bg-secondary) !important;
+}
+
+.smooth-scroll-page section#contact {
+    background: var(--bg-dark) !important;
+    color: white !important;
+}
+
+.smooth-scroll-page section#contact .section-title,
+.smooth-scroll-page section#contact h2,
+.smooth-scroll-page section#contact h3 {
+    color: white !important;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
     }
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .about-content {
@@ -596,39 +854,35 @@ section {
         font-size: 2rem;
     }
 
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
     .blog-grid {
         grid-template-columns: 1fr;
-        /* 1 column on mobile */
     }
 
     .blog-title {
         min-height: auto;
-        /* Remove fixed height on mobile */
         -webkit-line-clamp: unset;
-        /* Allow full title on mobile */
     }
 
+    .smooth-scroll-page section#home h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .smooth-scroll-page section#home p {
+        font-size: 1.1rem !important;
+    }
+
+    .smooth-scroll-page section .container,
+    .smooth-scroll-page section .hero-content {
+        padding: 1rem !important;
+    }
 }
 
 @media (max-width: 992px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on tablets */
     }
-}
-
-/* Scroll animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.spaced-paragraph {
-    margin-bottom: 1.5rem;
 }
