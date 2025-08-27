@@ -61,67 +61,59 @@ The site is entirely static — no build step required.
 
 ## Contact Form
 
-Used Formspree for simplicity - no server code.  
-Obtain you own `https://formspree.io/f/YOUR-KEY` from Formspree.
+Used **Formspree** for simplicity - no server code.  
+
+- Obtain you own `https://formspree.io/f/YOUR-KEY` from Formspree;
+- Target Email: set in the form’s Settings → Email Notifications;
+- (Optional) Project → Settings → Restrict to Domain: `organokov.com` (set your domain);
+- DevTools → Network to verify: `POST https://formspree.io/f/YOUR-KEY` returns `200 {"ok":true}`;
+- Check Submissions if emails don’t arrive; also inspect spam/junk.
 
 Form action in public/contact.html:
 
 ```html
-<form id="contactForm" action="https://formspree.io/f/YOUR-KEY" method="POST">
-<!-- name / email / message fields ... -->
-</form>
-<p id="formStatus" aria-live="polite"></p>
+    <form id="contactForm" action="https://formspree.io/f/YOUR-KEY" method="POST">
+    <!-- name / email / message fields ... -->
+    </form>
+    <p id="formStatus" aria-live="polite"></p>
 ```
 
 Delegated JS handler is bound globally in `public/src/js/main.js`, so it works even when the form is injected by the section loader:
 
 ```js
-if (!window.__contactDelegatedBound) {
-  window.__contactDelegatedBound = true;
-  document.addEventListener('submit', async (e) => {
-    const form = e.target;
-    if (!form.matches('#contactForm')) return;
-    e.preventDefault();
+    if (!window.__contactDelegatedBound) {
+    window.__contactDelegatedBound = true;
+    document.addEventListener('submit', async (e) => {
+        const form = e.target;
+        if (!form.matches('#contactForm')) return;
+        e.preventDefault();
 
-    const statusEl = document.getElementById('formStatus');
-    if (statusEl) statusEl.textContent = 'Sending...';
+        const statusEl = document.getElementById('formStatus');
+        if (statusEl) statusEl.textContent = 'Sending...';
 
-    try {
-      const res = await fetch(form.action, {
-        method: form.method || 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      const txt = await res.text();
-      console.log('Formspree status:', res.status, txt);
+        try {
+        const res = await fetch(form.action, {
+            method: form.method || 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        });
+        const txt = await res.text();
+        console.log('Formspree status:', res.status, txt);
 
-      if (res.ok) {
-        form.reset();
-        statusEl && (statusEl.textContent = 'Thanks! I’ll get back to you shortly.');
-      } else {
-        let msg = txt; try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch {}
-        statusEl && (statusEl.textContent = 'Error: ' + msg);
-      }
-    } catch (err) {
-      console.error(err);
-      statusEl && (statusEl.textContent = 'Network error. Please try again.');
+        if (res.ok) {
+            form.reset();
+            statusEl && (statusEl.textContent = 'Thanks! I’ll get back to you shortly.');
+        } else {
+            let msg = txt; try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch {}
+            statusEl && (statusEl.textContent = 'Error: ' + msg);
+        }
+        } catch (err) {
+        console.error(err);
+        statusEl && (statusEl.textContent = 'Network error. Please try again.');
+        }
+    });
     }
-  });
-}
 ```
-
-In **Formspree**:
-
-- Target Email: set in the form’s Settings → Email Notifications.
-- (Optional) Project → Settings → Restrict to Domain:  
-    `organokov.com` (set your domain)
-- Use DevTools → Network to verify:
-
-    ```bash
-    POST https://formspree.io/f/YOUR-KEY` returns `200 {"ok":true}
-    ```
-
-- Check Submissions if emails don’t arrive; also inspect spam/junk.
 
 ## Pretty URLs & Routing
 
