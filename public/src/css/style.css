@@ -891,3 +891,14 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Disable fadeInUp animation for name typing effect */
+.smooth-scroll-page .hero h1 {
+    animation: none !important;
+}
+
+/* Ensure the h1 is visible during name typing */
+.smooth-scroll-page .hero h1 {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
