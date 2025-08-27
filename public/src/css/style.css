@@ -771,8 +771,9 @@ section {
     transform: none !important;
 }
 
+/* Change position font here */
 .smooth-scroll-page section#home p {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
     margin-bottom: 2rem !important;
     opacity: 0.9 !important;
 }
