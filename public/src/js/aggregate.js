@@ -270,7 +270,7 @@ function setupInteractions() {
 
     // Typing animation for hero title - run after everything loads
     setTimeout(() => {
-        const heroTitle = document.querySelector('.hero h1');
+        const heroTitle = document.querySelector('#home h1');
         if (heroTitle) {
             const text = heroTitle.textContent;
             heroTitle.textContent = '';
