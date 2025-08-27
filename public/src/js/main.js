@@ -108,37 +108,37 @@ document.querySelectorAll('.fade-in').forEach(el => {
     fadeInObserver.observe(el);
 });
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+// Contact form handling -> deleted the whole block to avoit form reset
+// const contactForm = document.querySelector('.contact-form');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
 
-        // Get form data
-        const name = document.getElementById('name')?.value;
-        const email = document.getElementById('email')?.value;
-        const message = document.getElementById('message')?.value;
+//         // Get form data
+//         const name = document.getElementById('name')?.value;
+//         const email = document.getElementById('email')?.value;
+//         const message = document.getElementById('message')?.value;
 
-        // Simple validation
-        if (!name || !email || !message) {
-            alert('Please fill in all fields');
-            return;
-        }
+//         // Simple validation
+//         if (!name || !email || !message) {
+//             alert('Please fill in all fields');
+//             return;
+//         }
 
-        // Email validation
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
+//         // Email validation
+//         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         if (!emailPattern.test(email)) {
+//             alert('Please enter a valid email address');
+//             return;
+//         }
 
-        // Simulate form submission
-        alert('Thank you for your message! I\'ll get back to you soon.');
+//         // Simulate form submission
+//         alert('Thank you for your message! I\'ll get back to you soon.');
 
-        // Reset form
-        e.target.reset();
-    });
-}
+//         // Reset form
+//         e.target.reset();
+//     });
+// }
 
 // Interactive hover effects
 document.querySelectorAll('.skill-card, .blog-card, .timeline-content, .project-card').forEach(card => {
@@ -278,35 +278,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Global delegated handler — works even if #contactForm is injected later
-document.addEventListener('submit', async (e) => {
-    const form = e.target;
-    if (!form.matches('#contactForm')) return; // ignore other forms
-    e.preventDefault();
+// Bind once, even if main.js is loaded multiple times
+if (!window.__contactDelegatedBound) {
+    window.__contactDelegatedBound = true;
 
-    const statusEl = document.getElementById('formStatus');
-    if (statusEl) statusEl.textContent = 'Sending...';
+    // Global delegated handler — works even if #contactForm is injected later
+    document.addEventListener('submit', async (e) => {
+        const form = e.target;
+        if (!form.matches('#contactForm')) return; // only handle the contact form
+        e.preventDefault();
 
-    try {
-        const res = await fetch(form.action, {
-            method: form.method || 'POST',
-            body: new FormData(form),
-            headers: { Accept: 'application/json' }
-        });
+        const statusEl = document.getElementById('formStatus');
+        if (statusEl) statusEl.textContent = 'Sending...';
 
-        const txt = await res.text();
-        console.log('Formspree status:', res.status, txt);
+        try {
+            const res = await fetch(form.action, {
+                method: form.method || 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
 
-        if (res.ok) {
-            form.reset();
-            if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
-        } else {
-            let msg = txt;
-            try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
-            if (statusEl) statusEl.textContent = 'Error: ' + msg;
+            const txt = await res.text();
+            console.log('Formspree status:', res.status, txt);
+
+            if (res.ok) {
+                form.reset();
+                if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
+            } else {
+                let msg = txt;
+                try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
+                if (statusEl) statusEl.textContent = 'Error: ' + msg;
+            }
+        } catch (err) {
+            console.error(err);
+            if (statusEl) statusEl.textContent = 'Network error. Please try again.';
         }
-    } catch (err) {
-        console.error(err);
-        if (statusEl) statusEl.textContent = 'Network error. Please try again.';
-    }
-});
+    });
+}
