@@ -286,25 +286,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        statusEl.textContent = 'Sending...';
+        if (statusEl) statusEl.textContent = 'Sending...';
 
         try {
             const res = await fetch(form.action, {
-                method: 'POST',
+                method: form.method || 'POST',
                 body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
+                headers: { Accept: 'application/json' }
             });
+
+            const txt = await res.text();
+            console.log('Formspree status:', res.status, txt);
 
             if (res.ok) {
                 form.reset();
-                statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
+                if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
             } else {
-                const data = await res.json().catch(() => null);
-                statusEl.textContent =
-                    data?.errors?.[0]?.message || 'Sorry, something went wrong.';
+                // Try to surface Formspree’s error message
+                let msg = txt;
+                try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
+                if (statusEl) statusEl.textContent = 'Error: ' + msg;
             }
-        } catch {
-            statusEl.textContent = 'Network error. Please try again.';
+        } catch (err) {
+            console.error(err);
+            if (statusEl) statusEl.textContent = 'Network error. Please try again.';
         }
     });
 })();
