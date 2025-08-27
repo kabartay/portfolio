@@ -1,14 +1,10 @@
 services:
   - type: web
     name: portfolio
-    env: static
-    buildCommand: echo "No build required for static site"
-    staticPublishPath: ./public
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: public
     routes:
-      # Handle SPA routing - redirect all routes to index.html
-      - type: rewrite
-        source: /
-        destination: /index.html
       - type: rewrite
         source: /about
         destination: /about.html
@@ -22,7 +18,6 @@ services:
         source: /contact
         destination: /contact.html
     headers:
-      # Security headers
       - path: /*
         name: X-Frame-Options
         value: DENY
@@ -32,7 +27,6 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-      # Cache static assets
       - path: /src/css/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
@@ -42,10 +36,6 @@ services:
       - path: /assets/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
-      # Cache HTML files for shorter time
       - path: /*.html
         name: Cache-Control
         value: public, max-age=3600
-    envVars:
-      - key: NODE_ENV
-        value: production
