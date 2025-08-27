@@ -551,10 +551,11 @@ section {
     opacity: 0.9;
 }
 
+/* Reduce space between contact items (was 1rem) */
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     gap: 1rem;
 }
 
