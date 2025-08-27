@@ -278,38 +278,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* JS handler (keeps you on the page, shows status) for email */
-(() => {
-    const form = document.getElementById('contactForm');
+// Global delegated handler — works even if #contactForm is injected later
+document.addEventListener('submit', async (e) => {
+    const form = e.target;
+    if (!form.matches('#contactForm')) return; // ignore other forms
+    e.preventDefault();
+
     const statusEl = document.getElementById('formStatus');
-    if (!form) return;
+    if (statusEl) statusEl.textContent = 'Sending...';
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (statusEl) statusEl.textContent = 'Sending...';
+    try {
+        const res = await fetch(form.action, {
+            method: form.method || 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        });
 
-        try {
-            const res = await fetch(form.action, {
-                method: form.method || 'POST',
-                body: new FormData(form),
-                headers: { Accept: 'application/json' }
-            });
+        const txt = await res.text();
+        console.log('Formspree status:', res.status, txt);
 
-            const txt = await res.text();
-            console.log('Formspree status:', res.status, txt);
-
-            if (res.ok) {
-                form.reset();
-                if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
-            } else {
-                // Try to surface Formspree’s error message
-                let msg = txt;
-                try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
-                if (statusEl) statusEl.textContent = 'Error: ' + msg;
-            }
-        } catch (err) {
-            console.error(err);
-            if (statusEl) statusEl.textContent = 'Network error. Please try again.';
+        if (res.ok) {
+            form.reset();
+            if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
+        } else {
+            let msg = txt;
+            try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
+            if (statusEl) statusEl.textContent = 'Error: ' + msg;
         }
-    });
-})();
+    } catch (err) {
+        console.error(err);
+        if (statusEl) statusEl.textContent = 'Network error. Please try again.';
+    }
+});
