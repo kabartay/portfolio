@@ -7,20 +7,20 @@ services:
     routes:
       # Handle SPA routing - redirect all routes to index.html
       - type: rewrite
+        source: /
+        destination: /index.html
+      - type: rewrite
         source: /about
         destination: /about.html
+      - type: rewrite
+        source: /experience
+        destination: /experience.html
       - type: rewrite
         source: /blog
         destination: /blog.html
       - type: rewrite
         source: /contact
         destination: /contact.html
-      - type: rewrite
-        source: /experience
-        destination: /experience.html
-      - type: rewrite
-        source: /
-        destination: /index.html
     headers:
       # Security headers
       - path: /*
