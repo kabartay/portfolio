@@ -2,44 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Engineer Portfolio - Machine Learning & Deep Learning Expert">
-    <meta name="keywords" content="AI Engineer, Machine Learning, Deep Learning, Portfolio, Data Science">
-    <title>Mukharbek Organokov - AI Engineer Portfolio</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Mukharbek Organokov</title>
+    <meta name="description" content="Portfolio - Mukharbek Organokov AI Engineer">
+    <link rel="stylesheet" href="src/css/style.css" />
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
+<body class="smooth-scroll-page">
+    <nav class="navbar" role="navigation" aria-label="Main">
         <div class="nav-container">
             <div class="logo">Mukharbek Organokov</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="long.html" class="portfolio-link">Full Portfolio</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Mukharbek Organokov</h1>
-            <p>Senior AI Engineer</p>
-            <div class="cta-buttons">
-                <a href="about.html" class="cta-button">Discover My Work</a>
-                <a href="long.html" class="cta-button-secondary">View Full Portfolio</a>
-            </div>
-        </div>
-    </section>
+    <main id="main">
+        <div class="loading" id="loading-indicator">Loading content...</div>
+        <div id="all-sections"></div>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Mukharbek Organokov. All rights reserved. Built with passion for AI.</p>
@@ -49,7 +38,7 @@
     <!-- Back to top button -->
     <button class="back-to-top" id="backToTop">↑</button>
 
-    <script src="src/js/main.js"></script>
+    <script src="src/js/aggregate.js"></script>
 </body>
 
 </html>
