@@ -35,7 +35,7 @@ async function fetchSection({ id, url, title }) {
                 section.innerHTML = `
                     <div class="hero-content">
                         <h1>Mukharbek Organokov</h1>
-                        <p>Senior AI Engineer</p>
+                        <p>Senior AI Stack Engineer</p>
                         <a href="#about" class="cta-button">Discover My Work</a>
                     </div>
                 `;
@@ -316,14 +316,23 @@ async function init() {
     console.log('Starting portfolio loader...');
 
     try {
-        // Load all sections
-        for (const page of pages) {
-            await fetchSection(page);
-            await new Promise(resolve => setTimeout(resolve, 100));
-        }
+        // Option 1: Load all sections
+        // for (const page of pages) {
+        //     await fetchSection(page);
+        //     await new Promise(resolve => setTimeout(resolve, 100));
+        // }
+
+        // Option 2: Load Home section first (pages[0])
+        await fetchSection(pages[0]);
 
         // Hide loading indicator
         loadingIndicator.style.display = 'none';
+
+        // Option 2: Load the rest sequentially (no artificial delay)
+        for (const page of pages.slice(1)) {
+            await fetchSection(page);
+            // removed: await new Promise(r => setTimeout(r, 100));
+        }
 
         // Setup all functionality
         setupSmoothScrolling();
@@ -333,6 +342,7 @@ async function init() {
 
     } catch (error) {
         console.error('Error loading portfolio:', error);
+        loadingIndicator.style.display = 'none'; // For Option 2
         loadingIndicator.innerHTML = `
             <div style="color: red; text-align: center;">
                 <h3>Error Loading Portfolio</h3>
