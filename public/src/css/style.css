@@ -272,24 +272,34 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
+    /* Change from 'center' to 'flex-start' */
 }
 
+/* Ensure no top padding or top margin */
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
 }
 
+/* Ensure first paragraph has no top margin */
+.about-text p:first-child {
+    margin-top: 0;
+}
+
+/* Remove top margin 2rem to 0 to align with text */
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .skill-card {
