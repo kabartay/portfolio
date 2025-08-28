@@ -35,7 +35,7 @@ async function fetchSection({ id, url, title }) {
                 section.innerHTML = `
                     <div class="hero-content">
                         <h1>Mukharbek Organokov</h1>
-                        <p>Senior AI Engineer</p>
+                        <p>Senior AI Stack Engineer</p>
                         <a href="#about" class="cta-button">Discover My Work</a>
                     </div>
                 `;
