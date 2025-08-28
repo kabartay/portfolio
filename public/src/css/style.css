@@ -448,7 +448,10 @@ section {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
-    min-height: 2.4rem;
+    min-height: 3.0rem;
+    /* This line already exists - increase it */
+    height: 3.0rem;
+    /* ADD THIS - forces exact height */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
