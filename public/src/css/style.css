@@ -186,27 +186,6 @@ html {
     transform: translateY(-2px);
 }
 
-/*
-.cta-button-secondary {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: transparent;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.cta-button-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
-    transform: translateY(-2px);
-}
-*/
-
 @keyframes float {
 
     0%,
@@ -459,9 +438,7 @@ section {
     margin-bottom: 0.5rem;
     color: var(--text-primary);
     min-height: 3.0rem;
-    /* This line already exists - increase it */
     height: 3.0rem;
-    /* ADD THIS - forces exact height */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -717,7 +694,7 @@ section {
     margin: 2rem;
 }
 
-/* ===== SMOOTH SCROLLING PAGE STYLES (long.html) ===== */
+/* Smooth scrolling */
 .smooth-scroll-page main {
     padding-top: 0 !important;
 }
@@ -904,7 +881,8 @@ section {
     }
 }
 
-@media (max-width: 992px) {
+/* Two column on tablets only */
+@media (min-width: 769px) and (max-width: 992px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
     }
