@@ -12,6 +12,9 @@ services:
         source: /experience
         destination: /experience.html
       - type: rewrite
+        source: /education
+        destination: /education.html
+      - type: rewrite
         source: /blog
         destination: /blog.html
       - type: rewrite

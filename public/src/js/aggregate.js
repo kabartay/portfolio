@@ -2,6 +2,7 @@ const pages = [
     { id: 'home', url: 'index.html', title: 'Home' },
     { id: 'about', url: 'about.html', title: 'About' },
     { id: 'experience', url: 'experience.html', title: 'Experience' },
+    { id: 'education', url: 'education.html', title: 'Education' },
     { id: 'blog', url: 'blog.html', title: 'Blog' },
     { id: 'contact', url: 'contact.html', title: 'Contact' },
 ];
@@ -316,19 +317,14 @@ async function init() {
     console.log('Starting portfolio loader...');
 
     try {
-        // Option 1: Load all sections
-        // for (const page of pages) {
-        //     await fetchSection(page);
-        //     await new Promise(resolve => setTimeout(resolve, 100));
-        // }
 
-        // Option 2: Load Home section first (pages[0])
+        // Load Home section first (pages[0])
         await fetchSection(pages[0]);
 
         // Hide loading indicator
         loadingIndicator.style.display = 'none';
 
-        // Option 2: Load the rest sequentially (no artificial delay)
+        // Load the rest sequentially (no artificial delay)
         for (const page of pages.slice(1)) {
             await fetchSection(page);
             // removed: await new Promise(r => setTimeout(r, 100));
