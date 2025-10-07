@@ -19,6 +19,7 @@ A fast, static portfolio site for AI/ML & MLOps work. Built with plain **HTML/CS
     │  ├── assets/                     # Images, icons, downloadable files, etc.
     │  ├── about.html                  # About page (also reachable at /about via Render rewrites)
     │  ├── experience.html             # Experience/Resume page
+    │  ├── education.html              # Education page   
     │  ├── blog.html                   # Blog landing page (or list of posts)
     │  ├── contact.html                # Contact page (Formspree form lives here)
     │  ├── index.html                  # Current homepage (also used as “shell” for aggregate loader)
