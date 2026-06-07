@@ -1,0 +1,83 @@
+/* =====================================================================
+   THEME — COLOUR PALETTES
+   ---------------------------------------------------------------------
+   This is the single place to edit colours or add new palettes.
+   It is pulled into style.css via:   @import url('theme.css');
+
+   • :root                 → the DEFAULT palette (indigo / violet)
+   • [data-palette="alt"]  → the ALTERNATE palette (Castleton green)
+
+   Which one is shown is decided by  src/js/theme-config.js
+   (and the in-page palette toggle button). To add a third palette,
+   copy the [data-palette="alt"] block, rename it e.g.
+   [data-palette="ocean"], change the values, then reference "ocean"
+   from theme-config.js.
+
+   HOW THE TOKENS WORK
+   • --primary-color / --secondary-color / --accent-color  → hex values
+   • --*-rgb            → the SAME colours as "R, G, B" channels so that
+                          translucent tints can be written as
+                          rgba(var(--primary-rgb), 0.1)
+   • --gradient-*       → ready-made gradients derived from the tokens
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   DEFAULT PALETTE — Indigo / Violet
+   --------------------------------------------------------------------- */
+:root {
+    /* Core brand colours */
+    --primary-color:   #6366f1;
+    --primary-dark:    #4f46e5;
+    --secondary-color: #8b5cf6;
+    --accent-color:    #f0abfc;
+    --accent-text:     var(--secondary-color);   /* dates / company / institution labels */
+
+    /* RGB channels — lets every rgba() tint track the active palette */
+    --primary-rgb:    99, 102, 241;
+    --secondary-rgb: 139,  92, 246;
+    --accent-rgb:    236,  72, 153;
+    --mid-rgb:       168,  85, 247;   /* purple mid-stop */
+    --edu-start-rgb:  59, 130, 246;   /* blue used in education section */
+
+    /* Named gradients — derived from palette tokens */
+    --gradient:          linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-warm:     linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-timeline: linear-gradient(180deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-dot:      linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 100%);
+    --gradient-edu-line: linear-gradient(180deg, rgb(var(--edu-start-rgb)) 0%, var(--secondary-color) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-edu-dot:  linear-gradient(135deg, rgb(var(--edu-start-rgb)) 0%, var(--secondary-color) 100%);
+    --gradient-blog-1:   linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 100%);
+    --gradient-blog-2:   linear-gradient(135deg, #0ea5e9 0%, var(--primary-color) 100%);
+    --gradient-blog-5:   linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, var(--secondary-color) 100%);
+}
+
+/* ---------------------------------------------------------------------
+   ALTERNATE PALETTE — Castleton / British Racing Green
+   Source swatch: #0A5C36 #0F5132 #14452F #18392B #1D2E28
+   --------------------------------------------------------------------- */
+[data-palette="alt"] {
+    /* Core brand colours */
+    --primary-color:   #0a5c36;   /* Castleton green */
+    --primary-dark:    #0f5132;   /* Castleton green (dark) */
+    --secondary-color: #14452f;   /* British racing green */
+    --accent-color:    #86efac;   /* Light mint — bright highlights */
+    --accent-text:     #15803d;   /* lighter green for dates / company / institution labels */
+
+    /* RGB channels — must match the hex values above (R, G, B) */
+    --primary-rgb:    10,  92,  54;   /* #0a5c36 */
+    --secondary-rgb:  20,  69,  47;   /* #14452f */
+    --accent-rgb:     16, 185, 129;   /* #10b981 emerald — keeps tints visible */
+    --mid-rgb:        21, 128,  61;   /* #15803d — lightened so date badges read brighter */
+    --edu-start-rgb:  13, 148, 136;   /* #0d9488 teal — variety in education */
+
+    /* Gradients auto-derive from the tokens above */
+    --gradient:          linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-warm:     linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-timeline: linear-gradient(180deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-dot:      linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 100%);
+    --gradient-edu-line: linear-gradient(180deg, rgb(var(--edu-start-rgb)) 0%, var(--secondary-color) 50%, rgb(var(--accent-rgb)) 100%);
+    --gradient-edu-dot:  linear-gradient(135deg, rgb(var(--edu-start-rgb)) 0%, var(--secondary-color) 100%);
+    --gradient-blog-1:   linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 100%);
+    --gradient-blog-2:   linear-gradient(135deg, #0ea5e9 0%, var(--primary-color) 100%);
+    --gradient-blog-5:   linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, var(--secondary-color) 100%);
+}

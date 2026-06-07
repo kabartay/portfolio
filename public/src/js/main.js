@@ -146,6 +146,25 @@ themeToggle?.addEventListener('click', () => {
     setThemeIcon(next === 'dark');
 });
 
+// ── Palette toggle ──
+const paletteToggle = document.getElementById('paletteToggle');
+if (paletteToggle) {
+    if (window.SITE_THEME && window.SITE_THEME.enablePaletteToggle === false) {
+        paletteToggle.style.display = 'none';
+    } else {
+        const setPaletteIcon = (isGreen) => {
+            paletteToggle.textContent = isGreen ? '🟣' : '🟢';
+            paletteToggle.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
+        };
+        setPaletteIcon(document.documentElement.hasAttribute('data-palette'));
+        paletteToggle.addEventListener('click', () => {
+            const next = document.documentElement.hasAttribute('data-palette') ? 'indigo' : 'green';
+            window.__applyPalette(next);
+            setPaletteIcon(next === 'green');
+        });
+    }
+}
+
 // ── Scroll progress bar ──
 const scrollProgress = document.getElementById('scrollProgress');
 if (scrollProgress) {

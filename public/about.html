@@ -21,9 +21,10 @@
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/favicon.svg">
     <meta name="author" content="Mukharbek Organokov">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#0a5c36">
     <link rel="stylesheet" href="/src/css/style.css">
     <script>!function(){var t=localStorage.getItem('theme');t?document.documentElement.setAttribute('data-theme',t):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement.setAttribute('data-theme','dark')}();</script>
+    <script src="/src/js/theme-config.js"></script>
 </head>
 
 <body>
@@ -42,6 +43,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="palette-toggle" id="paletteToggle" aria-label="Switch colour palette" title="Switch colour palette">🟣</button>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle"
                         aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
             </div>
@@ -91,8 +93,7 @@
                     <div class="skill-card">
                         <div class="icon">🚀</div>
                         <h4>MLOps & Infra</h4>
-                        <p>Docker, Kubernetes, Kubeflow, MLFlow, FastAPI, gRPC, GCP, AWS, GitOps
-                        </p>
+                        <p>Docker, Kubernetes, Kubeflow, MLFlow, FastAPI, gRPC, GCP, AWS, GitOps</p>
                     </div>
                     <div class="skill-card">
                         <div class="icon">🤖</div>
