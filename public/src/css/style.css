@@ -1384,6 +1384,23 @@ a.logo { text-decoration: none; }
     transform: rotate(15deg);
 }
 
+.palette-toggle {
+    background: none;
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
+    border-radius: var(--radius-sm);
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    line-height: 1; flex-shrink: 0;
+}
+.palette-toggle:hover {
+    background: rgba(var(--primary-rgb), 0.08);
+    border-color: rgba(var(--primary-rgb), 0.4);
+    transform: scale(1.1);
+}
+
 /* =============================================
    NAVBAR SCROLLED STATE
    ============================================= */

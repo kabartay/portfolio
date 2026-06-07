@@ -328,7 +328,32 @@ async function init() {
 
 // Start when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        setupPaletteToggle();
+    });
 } else {
     init();
+    setupPaletteToggle();
+}
+
+function setupPaletteToggle() {
+    const btn = document.getElementById('paletteToggle');
+    if (!btn) return;
+    const setIcon = (isGreen) => {
+        btn.textContent = isGreen ? '🟣' : '🌿';
+        btn.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
+    };
+    setIcon(document.documentElement.hasAttribute('data-palette'));
+    btn.addEventListener('click', () => {
+        const isGreen = document.documentElement.hasAttribute('data-palette');
+        if (isGreen) {
+            document.documentElement.removeAttribute('data-palette');
+            localStorage.setItem('palette', 'default');
+        } else {
+            document.documentElement.setAttribute('data-palette', 'alt');
+            localStorage.setItem('palette', 'alt');
+        }
+        setIcon(!isGreen);
+    });
 }
