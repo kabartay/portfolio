@@ -331,10 +331,26 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         init();
         setupPaletteToggle();
+        setupThemeToggle();
     });
 } else {
     init();
     setupPaletteToggle();
+    setupThemeToggle();
+}
+
+function setupThemeToggle() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const sync = (isDark) => { btn.textContent = isDark ? '☀️' : '🌙'; };
+    sync(document.documentElement.getAttribute('data-theme') === 'dark');
+    btn.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        sync(next === 'dark');
+    });
 }
 
 function setupPaletteToggle() {
