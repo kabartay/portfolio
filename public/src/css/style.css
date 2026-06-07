@@ -1559,6 +1559,8 @@ body, .navbar, .skill-card, .timeline-content, .blog-card,
 [data-theme="dark"] .education-content { background: var(--surface); border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .education-info h3 { color: var(--text-primary); }
 [data-theme="dark"] .institution { color: var(--accent-text); }
+[data-theme="dark"] .education-details { border-bottom-color: rgba(255,255,255,0.07); }
+[data-theme="dark"] .education-highlights { border-top-color: rgba(255,255,255,0.07); }
 [data-theme="dark"] .highlight-item { background: rgba(var(--primary-rgb),0.1); color: var(--text-secondary); }
 [data-theme="dark"] .detail-item { color: var(--text-secondary); }
 [data-theme="dark"] .section-title { color: var(--text-primary); }
