@@ -1359,20 +1359,20 @@ a.logo { text-decoration: none; }
 }
 
 .palette-toggle {
-    background: none;
-    border: 1px solid rgba(var(--primary-rgb), 0.2);
-    border-radius: var(--radius-sm);
+    background: var(--primary-color);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
     width: 34px; height: 34px;
-    display: flex; align-items: center; justify-content: center;
+    padding: 0;
     cursor: pointer;
-    font-size: 0.85rem;
-    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    font-size: 0;            /* hide any text node — the colour is the indicator */
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
     line-height: 1; flex-shrink: 0;
 }
 .palette-toggle:hover {
-    background: rgba(var(--primary-rgb), 0.08);
-    border-color: rgba(var(--primary-rgb), 0.4);
-    transform: scale(1.1);
+    transform: scale(1.12);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.35);
 }
 
 /* =============================================
@@ -1527,6 +1527,8 @@ a.logo { text-decoration: none; }
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-dark: #020617;
+    --surface: #1e293b;        /* card surface — overridden per palette */
+    --nav-bg: 15, 23, 42;      /* navbar bg channels — overridden per palette */
     --shadow-card: 0 2px 8px rgba(0,0,0,0.4), 0 0 0 1px rgba(var(--primary-rgb),0.15);
     --shadow: 0 4px 16px rgba(0,0,0,0.4);
     --shadow-hover: 0 12px 36px rgba(var(--primary-rgb),0.35), 0 4px 12px rgba(0,0,0,0.4);
@@ -1537,24 +1539,24 @@ body, .navbar, .skill-card, .timeline-content, .blog-card,
                 border-color 0.3s ease, box-shadow 0.3s ease;
 }
 [data-theme="dark"] body { background: var(--bg-primary); color: var(--text-primary); }
-[data-theme="dark"] .navbar { background: rgba(15,23,42,0.88) !important; border-bottom-color: rgba(var(--primary-rgb),0.15); }
-[data-theme="dark"] .navbar.scrolled { background: rgba(15,23,42,0.98) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important; }
+[data-theme="dark"] .navbar { background: rgba(var(--nav-bg),0.88) !important; border-bottom-color: rgba(var(--primary-rgb),0.15); }
+[data-theme="dark"] .navbar.scrolled { background: rgba(var(--nav-bg),0.98) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important; }
 [data-theme="dark"] .nav-links a { color: var(--text-secondary); }
 [data-theme="dark"] .nav-links a:hover,
 [data-theme="dark"] .nav-links a.active { color: var(--primary-color); background: rgba(var(--primary-rgb),0.12); }
 [data-theme="dark"] .theme-toggle { border-color: rgba(var(--primary-rgb),0.25); color: var(--text-secondary); }
 [data-theme="dark"] .about { background: var(--bg-secondary); }
-[data-theme="dark"] .skill-card { background: #1e293b; border-color: rgba(var(--primary-rgb),0.14); }
+[data-theme="dark"] .skill-card { background: var(--surface); border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .skill-card p { color: var(--text-secondary); }
 [data-theme="dark"] .about-text { color: var(--text-secondary); }
-[data-theme="dark"] .timeline-content { background: #1e293b; border-color: rgba(var(--primary-rgb),0.14); }
+[data-theme="dark"] .timeline-content { background: var(--surface); border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .timeline-title { color: var(--text-primary); }
-[data-theme="dark"] .blog-card { background: #1e293b; border-color: rgba(var(--primary-rgb),0.14); }
+[data-theme="dark"] .blog-card { background: var(--surface); border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .blog-title { color: var(--text-primary); }
 [data-theme="dark"] .blog-excerpt { color: var(--text-secondary); }
 [data-theme="dark"] .blog-meta { border-top-color: rgba(255,255,255,0.07); color: var(--text-light); }
 [data-theme="dark"] .education-section { background: var(--bg-secondary); }
-[data-theme="dark"] .education-content { background: #1e293b; border-color: rgba(var(--primary-rgb),0.14); }
+[data-theme="dark"] .education-content { background: var(--surface); border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .education-info h3 { color: var(--text-primary); }
 [data-theme="dark"] .institution { color: var(--accent-text); }
 [data-theme="dark"] .highlight-item { background: rgba(var(--primary-rgb),0.1); color: var(--text-secondary); }

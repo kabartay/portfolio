@@ -146,21 +146,22 @@ themeToggle?.addEventListener('click', () => {
     setThemeIcon(next === 'dark');
 });
 
-// ── Palette toggle ──
+// ── Palette swatch (cycles through palettes) ──
 const paletteToggle = document.getElementById('paletteToggle');
 if (paletteToggle) {
     if (window.SITE_THEME && window.SITE_THEME.enablePaletteToggle === false) {
         paletteToggle.style.display = 'none';
     } else {
-        const setPaletteIcon = (isGreen) => {
-            paletteToggle.textContent = isGreen ? '🟣' : '🟢';
-            paletteToggle.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
+        const syncPalette = () => {
+            paletteToggle.textContent = '';
+            const label = window.__paletteLabel ? window.__paletteLabel() : '';
+            paletteToggle.title = label ? `Theme: ${label} — click to change` : 'Change colour theme';
+            paletteToggle.setAttribute('aria-label', label ? `Colour theme: ${label}. Click to change.` : 'Change colour theme');
         };
-        setPaletteIcon(document.documentElement.hasAttribute('data-palette'));
+        syncPalette();
         paletteToggle.addEventListener('click', () => {
-            const next = document.documentElement.hasAttribute('data-palette') ? 'indigo' : 'green';
-            window.__applyPalette(next);
-            setPaletteIcon(next === 'green');
+            if (window.__cyclePalette) window.__cyclePalette();
+            syncPalette();
         });
     }
 }
