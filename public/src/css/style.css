@@ -1582,21 +1582,24 @@ body, .navbar, .skill-card, .timeline-content, .blog-card,
    Replace the indigo values below with your colours.
    All gradients auto-derive from the tokens above them.
    ============================================= */
+/* GREEN PALETTE — Castleton / British Racing / Gunmetal
+   Colours from: #0A5C36 #0F5132 #14452F #18392B #1D2E28
+   ============================================= */
 [data-palette="alt"] {
     /* Core brand colours */
-    --primary-color:   #6366f1;   /* ← your primary hex */
-    --primary-dark:    #4f46e5;
-    --secondary-color: #8b5cf6;
-    --accent-color:    #f0abfc;
+    --primary-color:   #0a5c36;   /* Castleton green */
+    --primary-dark:    #0f5132;   /* Castleton green (dark) */
+    --secondary-color: #14452f;   /* British racing green */
+    --accent-color:    #86efac;   /* Light mint — bright highlights */
 
     /* RGB channels — must match the hex values above (R, G, B) */
-    --primary-rgb:    99, 102, 241;
-    --secondary-rgb: 139,  92, 246;
-    --accent-rgb:    236,  72, 153;
-    --mid-rgb:       168,  85, 247;
-    --edu-start-rgb:  59, 130, 246;
+    --primary-rgb:    10,  92,  54;   /* #0a5c36 */
+    --secondary-rgb:  20,  69,  47;   /* #14452f */
+    --accent-rgb:     16, 185, 129;   /* #10b981 emerald — keeps tints visible */
+    --mid-rgb:        15,  81,  50;   /* #0f5132 */
+    --edu-start-rgb:  13, 148, 136;   /* #0d9488 teal — variety in education */
 
-    /* Gradients auto-derive — only override if you want a custom direction/stops */
+    /* Gradients auto-derive from the tokens above */
     --gradient:          linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     --gradient-warm:     linear-gradient(135deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
     --gradient-timeline: linear-gradient(180deg, var(--primary-color) 0%, rgb(var(--mid-rgb)) 50%, rgb(var(--accent-rgb)) 100%);
