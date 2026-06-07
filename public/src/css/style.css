@@ -1140,8 +1140,13 @@ section {
     }
 
     .cta-buttons {
-        flex-direction: column;
-        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .cta-button,
+    .cta-button-secondary {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
     }
 
     .about-content {
