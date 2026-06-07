@@ -1167,13 +1167,22 @@ section {
 
     .timeline-header {
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.3rem;
+    }
+
+    .timeline-date {
+        order: -1;   /* date badge first, then title, then company */
+        align-self: flex-start;
     }
 
     .timeline-title {
         white-space: normal;
         overflow: visible;
         text-overflow: clip;
+    }
+
+    .timeline-content p {
+        font-size: 0.875rem;
     }
 
     .timeline-dot {
