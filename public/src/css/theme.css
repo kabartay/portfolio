@@ -81,3 +81,133 @@
     --gradient-blog-2:   linear-gradient(135deg, #0ea5e9 0%, var(--primary-color) 100%);
     --gradient-blog-5:   linear-gradient(135deg, rgb(var(--accent-rgb)) 0%, var(--secondary-color) 100%);
 }
+
+/* Castleton green — matching deep-green dark-mode backgrounds */
+[data-theme="dark"][data-palette="alt"] {
+    --bg-primary:   #0a1f15;
+    --bg-secondary: #102a1c;
+    --bg-dark:      #051009;
+    --surface:      #14301f;
+    --nav-bg:       10, 31, 21;
+    --accent-text:  #4ade80;   /* brighter label green for dark bg */
+}
+
+/* =====================================================================
+   EXPERIMENTAL EXTRA PALETTES  (selectable via the navbar swatch)
+   ---------------------------------------------------------------------
+   Each block only overrides the ~10 colour tokens — every gradient,
+   shadow and tint AUTO-DERIVES from them (the gradient definitions in
+   :root resolve var() lazily against the active palette).
+   Each green palette has a paired dark-mode block giving it matching
+   deep-green backgrounds instead of the default slate.
+   ===================================================================== */
+
+/* 1 — Deep Forest Metallic (moss green + metallic-gold education accent) */
+[data-palette="forest"] {
+    --primary-color:   #2e5d4f;   /* sea moss */
+    --primary-dark:    #1f4034;
+    --secondary-color: #16352d;   /* deep pine */
+    --accent-color:    #7fb295;   /* sage highlight */
+    --accent-text:     #2e6b50;   /* label green on white (~5:1) */
+    --primary-rgb:     46,  93,  79;
+    --secondary-rgb:   22,  53,  45;
+    --accent-rgb:     127, 178, 149;   /* sage */
+    --mid-rgb:         53, 112,  86;   /* readable mid for badges */
+    --edu-start-rgb:  197, 165, 114;   /* metallic gold */
+}
+[data-theme="dark"][data-palette="forest"] {
+    --bg-primary:   #0b1f1a;
+    --bg-secondary: #13312b;
+    --bg-dark:      #060f0c;
+    --surface:      #16352d;
+    --nav-bg:       11, 31, 26;
+    --accent-text:  #9ccbae;
+}
+
+/* 2 — Emerald Noir (sleek SaaS emerald + mint glow) */
+[data-palette="emerald"] {
+    --primary-color:   #1b6b52;   /* emerald */
+    --primary-dark:    #124a39;
+    --secondary-color: #0f2a22;
+    --accent-color:    #3ddc97;   /* mint shine */
+    --accent-text:     #047857;
+    --primary-rgb:     27, 107,  82;
+    --secondary-rgb:   15,  42,  34;
+    --accent-rgb:      61, 220, 151;   /* mint */
+    --mid-rgb:         24, 120,  90;
+    --edu-start-rgb:   13, 148, 136;   /* teal */
+}
+[data-theme="dark"][data-palette="emerald"] {
+    --bg-primary:   #08120f;
+    --bg-secondary: #0f2a22;
+    --bg-dark:      #050b09;
+    --surface:      #123026;
+    --nav-bg:       8, 18, 15;
+    --accent-text:  #3ddc97;
+}
+
+/* 3 — Dark Sea Patina (oxidised sea-green, editorial) */
+[data-palette="patina"] {
+    --primary-color:   #2f6f65;   /* sea green */
+    --primary-dark:    #1f4d46;
+    --secondary-color: #14302e;
+    --accent-color:    #6fb3a8;   /* patina mist */
+    --accent-text:     #2a665d;
+    --primary-rgb:     47, 111, 101;
+    --secondary-rgb:   20,  48,  46;
+    --accent-rgb:     111, 179, 168;   /* patina mist */
+    --mid-rgb:         45, 117, 105;
+    --edu-start-rgb:   47, 143, 127;
+}
+[data-theme="dark"][data-palette="patina"] {
+    --bg-primary:   #0a1818;
+    --bg-secondary: #14302e;
+    --bg-dark:      #050d0d;
+    --surface:      #173432;
+    --nav-bg:       10, 24, 24;
+    --accent-text:  #6fb3a8;
+}
+
+/* 4 — Hunter Chrome (deep hunter green + chrome muted) */
+[data-palette="hunter"] {
+    --primary-color:   #2a4a33;   /* hunter green */
+    --primary-dark:    #1c3324;
+    --secondary-color: #1a2a1f;
+    --accent-color:    #8fa68e;   /* chrome muted */
+    --accent-text:     #44734f;
+    --primary-rgb:     42,  74,  51;
+    --secondary-rgb:   26,  42,  31;
+    --accent-rgb:     143, 166, 142;   /* chrome */
+    --mid-rgb:         58,  90,  68;
+    --edu-start-rgb:  105, 130, 105;
+}
+[data-theme="dark"][data-palette="hunter"] {
+    --bg-primary:   #0d1410;
+    --bg-secondary: #1a2a1f;
+    --bg-dark:      #070b08;
+    --surface:      #1d2e22;
+    --nav-bg:       13, 20, 16;
+    --accent-text:  #b6c7b0;
+}
+
+/* 5 — Jade Obsidian (jewel jade + warm-brass education accent) */
+[data-palette="jade"] {
+    --primary-color:   #1f5f4a;   /* jade */
+    --primary-dark:    #154235;
+    --secondary-color: #102a22;
+    --accent-color:    #46c2a0;   /* bright jade */
+    --accent-text:     #15795a;
+    --primary-rgb:     31,  95,  74;
+    --secondary-rgb:   16,  42,  34;
+    --accent-rgb:      70, 194, 160;   /* bright jade */
+    --mid-rgb:         31, 115,  89;
+    --edu-start-rgb:  168, 137, 107;   /* warm brass */
+}
+[data-theme="dark"][data-palette="jade"] {
+    --bg-primary:   #06100d;
+    --bg-secondary: #102a22;
+    --bg-dark:      #040a08;
+    --surface:      #133026;
+    --nav-bg:       6, 16, 13;
+    --accent-text:  #46c2a0;
+}

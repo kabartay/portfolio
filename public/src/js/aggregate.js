@@ -344,14 +344,15 @@ function setupPaletteToggle() {
         btn.style.display = 'none';
         return;
     }
-    const setIcon = (isGreen) => {
-        btn.textContent = isGreen ? '🟣' : '🟢';
-        btn.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
+    const sync = () => {
+        btn.textContent = '';
+        const label = window.__paletteLabel ? window.__paletteLabel() : '';
+        btn.title = label ? `Theme: ${label} — click to change` : 'Change colour theme';
+        btn.setAttribute('aria-label', label ? `Colour theme: ${label}. Click to change.` : 'Change colour theme');
     };
-    setIcon(document.documentElement.hasAttribute('data-palette'));
+    sync();
     btn.addEventListener('click', () => {
-        const next = document.documentElement.hasAttribute('data-palette') ? 'indigo' : 'green';
-        window.__applyPalette(next);
-        setIcon(next === 'green');
+        if (window.__cyclePalette) window.__cyclePalette();
+        sync();
     });
 }
