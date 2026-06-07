@@ -15,6 +15,11 @@ window.SITE_THEME = {
                  (null  = the default :root palette, i.e. Indigo)        */
     palettes: [
         { key: 'green',  label: 'Castleton Green', attr: 'alt' },
+        // { key: 'forest',  label: 'Deep Forest',  attr: 'forest' },
+        // { key: 'emerald', label: 'Emerald Noir',  attr: 'emerald' },
+        // { key: 'patina',  label: 'Sea Patina',    attr: 'patina' },
+        // { key: 'hunter',  label: 'Hunter Green',  attr: 'hunter' },
+        // { key: 'jade',    label: 'Jade Obsidian', attr: 'jade' },
         { key: 'indigo', label: 'Indigo',          attr: null },
     ],
 
