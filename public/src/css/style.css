@@ -183,7 +183,7 @@ html {
 }
 
 .hero p {
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-size: clamp(1.35rem, 2.6vw, 1.7rem);
     margin-bottom: 2.5rem;
     opacity: 0.88;
     font-weight: 400;
