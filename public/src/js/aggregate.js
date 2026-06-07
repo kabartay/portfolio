@@ -345,7 +345,7 @@ function setupPaletteToggle() {
         return;
     }
     const setIcon = (isGreen) => {
-        btn.textContent = isGreen ? '🟣' : '🌿';
+        btn.textContent = isGreen ? '🟣' : '🟢';
         btn.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
     };
     setIcon(document.documentElement.hasAttribute('data-palette'));

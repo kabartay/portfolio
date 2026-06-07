@@ -448,7 +448,7 @@ section {
 
 .timeline-company {
     font-size: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     margin-bottom: 1rem;
     font-style: normal;
     font-weight: 600;
@@ -1050,7 +1050,7 @@ section {
 .institution {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: var(--accent-text);
     margin: 0;
 }
 
@@ -1556,7 +1556,7 @@ body, .navbar, .skill-card, .timeline-content, .blog-card,
 [data-theme="dark"] .education-section { background: var(--bg-secondary); }
 [data-theme="dark"] .education-content { background: #1e293b; border-color: rgba(var(--primary-rgb),0.14); }
 [data-theme="dark"] .education-info h3 { color: var(--text-primary); }
-[data-theme="dark"] .institution { color: var(--secondary-color); }
+[data-theme="dark"] .institution { color: var(--accent-text); }
 [data-theme="dark"] .highlight-item { background: rgba(var(--primary-rgb),0.1); color: var(--text-secondary); }
 [data-theme="dark"] .detail-item { color: var(--text-secondary); }
 [data-theme="dark"] .section-title { color: var(--text-primary); }

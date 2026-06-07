@@ -153,7 +153,7 @@ if (paletteToggle) {
         paletteToggle.style.display = 'none';
     } else {
         const setPaletteIcon = (isGreen) => {
-            paletteToggle.textContent = isGreen ? '🟣' : '🌿';
+            paletteToggle.textContent = isGreen ? '🟣' : '🟢';
             paletteToggle.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
         };
         setPaletteIcon(document.documentElement.hasAttribute('data-palette'));

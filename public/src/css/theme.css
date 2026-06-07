@@ -30,6 +30,7 @@
     --primary-dark:    #4f46e5;
     --secondary-color: #8b5cf6;
     --accent-color:    #f0abfc;
+    --accent-text:     var(--secondary-color);   /* dates / company / institution labels */
 
     /* RGB channels — lets every rgba() tint track the active palette */
     --primary-rgb:    99, 102, 241;
@@ -60,12 +61,13 @@
     --primary-dark:    #0f5132;   /* Castleton green (dark) */
     --secondary-color: #14452f;   /* British racing green */
     --accent-color:    #86efac;   /* Light mint — bright highlights */
+    --accent-text:     #15803d;   /* lighter green for dates / company / institution labels */
 
     /* RGB channels — must match the hex values above (R, G, B) */
     --primary-rgb:    10,  92,  54;   /* #0a5c36 */
     --secondary-rgb:  20,  69,  47;   /* #14452f */
     --accent-rgb:     16, 185, 129;   /* #10b981 emerald — keeps tints visible */
-    --mid-rgb:        15,  81,  50;   /* #0f5132 */
+    --mid-rgb:        21, 128,  61;   /* #15803d — lightened so date badges read brighter */
     --edu-start-rgb:  13, 148, 136;   /* #0d9488 teal — variety in education */
 
     /* Gradients auto-derive from the tokens above */
