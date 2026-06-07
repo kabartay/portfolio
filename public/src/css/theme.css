@@ -68,7 +68,7 @@
     --secondary-rgb:  20,  69,  47;   /* #14452f */
     --accent-rgb:     16, 185, 129;   /* #10b981 emerald — keeps tints visible */
     --mid-rgb:        21, 128,  61;   /* #15803d — lightened so date badges read brighter */
-    --edu-start-rgb:  13, 148, 136;   /* #0d9488 teal — variety in education */
+    --edu-start-rgb:  21, 128,  61;   /* #15803d — matches --accent-text so institution name & badge share the same green */
 
     /* Gradients auto-derive from the tokens above */
     --gradient:          linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
