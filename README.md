@@ -10,9 +10,20 @@ A fast, static portfolio site for AI/ML & MLOps work. Built with plain **HTML/CS
 - 🌐 Website: [www.organokov.com](https://www.organokov.com)  
 - 📜 License: GNU General Public License v3.0  
 
+## Documentation
+
+Deeper developer docs live in [`docs/`](docs/README.md):
+
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — how the site works: the dual-page model, the homepage aggregate loader, and the two-axis theming system.
+- [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) — local dev, the branch/PR workflow, and step-by-step guides (add a page, blog post, or palette).
+
 ## Content
 
     ├── README.md                      # Project overview, setup, deploy, and domain setup
+    ├── docs/                          # Developer documentation
+    │  ├── README.md                   # Docs index
+    │  ├── ARCHITECTURE.md             # How the site works (dual-page model, loader, theming)
+    │  └── CONTRIBUTING.md             # Local dev, PR workflow, how-to guides, checklist
     ├── package-lock.json              # Exact, locked dependency versions for reproducible installs
     ├── package.json                   # Project metadata + dev scripts (e.g., "dev" with `serve`)
     ├── public/                        # All files served to the browser (site root)
