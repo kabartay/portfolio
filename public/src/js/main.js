@@ -148,23 +148,22 @@ themeToggle?.addEventListener('click', () => {
 
 // ── Palette toggle ──
 const paletteToggle = document.getElementById('paletteToggle');
-const setPaletteIcon = (isGreen) => {
-    if (!paletteToggle) return;
-    paletteToggle.textContent = isGreen ? '🟣' : '🌿';
-    paletteToggle.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
-};
-setPaletteIcon(document.documentElement.hasAttribute('data-palette'));
-paletteToggle?.addEventListener('click', () => {
-    const isGreen = document.documentElement.hasAttribute('data-palette');
-    if (isGreen) {
-        document.documentElement.removeAttribute('data-palette');
-        localStorage.setItem('palette', 'default');
+if (paletteToggle) {
+    if (window.SITE_THEME && window.SITE_THEME.enablePaletteToggle === false) {
+        paletteToggle.style.display = 'none';
     } else {
-        document.documentElement.setAttribute('data-palette', 'alt');
-        localStorage.setItem('palette', 'alt');
+        const setPaletteIcon = (isGreen) => {
+            paletteToggle.textContent = isGreen ? '🟣' : '🌿';
+            paletteToggle.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
+        };
+        setPaletteIcon(document.documentElement.hasAttribute('data-palette'));
+        paletteToggle.addEventListener('click', () => {
+            const next = document.documentElement.hasAttribute('data-palette') ? 'indigo' : 'green';
+            window.__applyPalette(next);
+            setPaletteIcon(next === 'green');
+        });
     }
-    setPaletteIcon(!isGreen);
-});
+}
 
 // ── Scroll progress bar ──
 const scrollProgress = document.getElementById('scrollProgress');

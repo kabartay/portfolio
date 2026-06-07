@@ -340,20 +340,18 @@ if (document.readyState === 'loading') {
 function setupPaletteToggle() {
     const btn = document.getElementById('paletteToggle');
     if (!btn) return;
+    if (window.SITE_THEME && window.SITE_THEME.enablePaletteToggle === false) {
+        btn.style.display = 'none';
+        return;
+    }
     const setIcon = (isGreen) => {
         btn.textContent = isGreen ? '🟣' : '🌿';
         btn.setAttribute('aria-label', isGreen ? 'Switch to indigo palette' : 'Switch to green palette');
     };
     setIcon(document.documentElement.hasAttribute('data-palette'));
     btn.addEventListener('click', () => {
-        const isGreen = document.documentElement.hasAttribute('data-palette');
-        if (isGreen) {
-            document.documentElement.removeAttribute('data-palette');
-            localStorage.setItem('palette', 'default');
-        } else {
-            document.documentElement.setAttribute('data-palette', 'alt');
-            localStorage.setItem('palette', 'alt');
-        }
-        setIcon(!isGreen);
+        const next = document.documentElement.hasAttribute('data-palette') ? 'indigo' : 'green';
+        window.__applyPalette(next);
+        setIcon(next === 'green');
     });
 }
