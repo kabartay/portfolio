@@ -20,6 +20,9 @@ services:
       - type: rewrite
         source: /contact
         destination: /contact.html
+      - type: rewrite
+        source: /privacy
+        destination: /privacy.html
     headers:
       # Security headers
       - path: /*
