@@ -21,8 +21,7 @@ Deeper developer docs live in [`docs/`](docs/README.md):
 
     ├── README.md                      # Project overview, setup, deploy, and domain setup
     ├── .github/workflows/             # GitHub Actions CI
-    │  ├── release.yml                 # Creates a GitHub Release + zip on every v*.*.* tag
-    │  └── sync-deployment.yml         # Fast-forwards the `deployment` branch to main on every push
+    │  └── release.yml                 # Creates a GitHub Release + zip on every v*.*.* tag
     ├── docs/                          # Developer documentation
     │  ├── README.md                   # Docs index
     │  ├── ARCHITECTURE.md             # How the site works (dual-page model, loader, theming)
@@ -191,18 +190,9 @@ To **add a palette**: copy a block in `theme.css` (e.g. `[data-palette="alt"]`),
 
 ## Deployment
 
-Deployed on **Render** (Static Site) using `render.yml`. Render watches the
-`deployment` branch — not `main`. A GitHub Actions workflow
-(`.github/workflows/sync-deployment.yml`) automatically fast-forwards
-`deployment` to `main` on every push, so merging a PR triggers a Render
-deploy with no manual steps.
-
-```
-merge PR → main → sync-deployment.yml → deployment branch → Render auto-deploy
-```
-
-> If Render stops auto-deploying, check that the service is set to watch the
-> `deployment` branch (Render dashboard → Settings → Branch).
+Deployed on **Render** (Static Site) using `render.yml`. Render is configured
+to watch the `main` branch — every merge to `main` triggers an automatic deploy
+with no manual steps needed.
 
 ### Local
 
