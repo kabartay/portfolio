@@ -1163,6 +1163,10 @@ section {
         margin-left: 40px !important;
     }
 
+    .timeline-title {
+        white-space: normal;
+    }
+
     .timeline-dot {
         left: 20px;
         transform: none;
