@@ -63,6 +63,10 @@ gh pr create --fill --base main                 # or pass --title/--body
 gh pr merge --squash --delete-branch
 ```
 
+Merging to `main` automatically triggers the `sync-deployment.yml` workflow,
+which fast-forwards the `deployment` branch so **Render deploys without any
+manual step**.
+
 > **Heads-up on squash merges.** Because PRs are squash-merged, a feature branch's
 > individual commits won't exist on `main`. If you keep working on an old branch
 > after its PR merged, git history diverges and GitHub reports phantom conflicts.
