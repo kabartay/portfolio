@@ -14,13 +14,8 @@ window.SITE_THEME = {
          attr  → the data-palette attribute value
                  (null  = the default :root palette, i.e. Indigo)        */
     palettes: [
-        { key: 'green',   label: 'Castleton Green', attr: 'alt' },
-        { key: 'forest',  label: 'Deep Forest',     attr: 'forest' },
-        { key: 'emerald', label: 'Emerald Noir',    attr: 'emerald' },
-        { key: 'patina',  label: 'Sea Patina',      attr: 'patina' },
-        { key: 'hunter',  label: 'Hunter Green',    attr: 'hunter' },
-        { key: 'jade',    label: 'Jade Obsidian',   attr: 'jade' },
-        { key: 'indigo',  label: 'Indigo',          attr: null },
+        { key: 'green',  label: 'Castleton Green', attr: 'alt' },
+        { key: 'indigo', label: 'Indigo',          attr: null },
     ],
 
     /* Palette shown to first-time visitors (must be a key above).       */
