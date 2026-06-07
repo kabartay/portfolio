@@ -1163,8 +1163,15 @@ section {
         margin-left: 40px !important;
     }
 
+    .timeline-header {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
     .timeline-title {
         white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
     }
 
     .timeline-dot {
