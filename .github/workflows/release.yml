@@ -16,11 +16,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Bundle public/
+        run: |
+          mkdir -p dist
+          zip -r dist/portfolio-${{ github.ref_name }}.zip public/
+
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
-          files: dist/*
+          files: dist/*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

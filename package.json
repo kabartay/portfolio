@@ -15,11 +15,11 @@
         "website"
     ],
     "author": "Mukharbek Organokov <mukharbek.organokov@gmail.com>",
-    "license": "GPLv3",
+    "license": "GPL-3.0-or-later",
     "dependencies": {
         "serve": "^14.0.0"
     },
     "engines": {
-        "node": ">=14.0.0"
+        "node": ">=18.0.0"
     }
 }

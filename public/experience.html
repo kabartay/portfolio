@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Experience - Mukharbek Organokov Career Journey">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.organokov.com/experience">
+    <meta property="og:title" content="Experience — Mukharbek Organokov">
+    <meta property="og:description" content="Career journey: from PhD researcher at CNRS to Senior AI Stack Engineer — spanning astrophysics, data science, and MLOps.">
+    <meta property="og:image" content="https://www.organokov.com/assets/og-card.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Experience — Mukharbek Organokov">
+    <meta name="twitter:description" content="Career journey: from PhD researcher at CNRS to Senior AI Stack Engineer — spanning astrophysics, data science, and MLOps.">
+    <meta name="twitter:image" content="https://www.organokov.com/assets/og-card.png">
     <title>Experience - Mukharbek Organokov</title>
     <link rel="canonical" href="https://www.organokov.com/experience" />
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+    <meta name="author" content="Mukharbek Organokov">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <script>!function(){var t=localStorage.getItem('theme');t?document.documentElement.setAttribute('data-theme',t):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement.setAttribute('data-theme','dark')}();</script>
 </head>
 
 <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main">
         <div class="nav-container">
-            <div class="logo">Mukharbek Organokov</div>
+            <a href="/" class="logo">Mukharbek Organokov</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="experience.html" class="active">Experience</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/experience" class="active">Experience</a></li>
+                <li><a href="/education">Education</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"
+                        aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+            </div>
         </div>
     </nav>
 
@@ -32,19 +53,26 @@
         <div class="container">
             <h2 class="section-title fade-in">Career Journey</h2>
             <div class="timeline">
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-info">
-                                <h3 class="timeline-title">Senior AI Stack Engineer</h3>
-                                <div class="timeline-company">Stealth</div>
+                                <h3 class="timeline-title">Senior ML Engineer</h3>
+                                <div class="timeline-company">Temelion</div>
                             </div>
-                            <span class="timeline-date">2025 - Present </span>
+                            <span class="timeline-date">2025 - Present</span>
                         </div>
-                        <p>Building robust and scalable modern AI infrastructure to accelerate training,
-                            fine-tuning, and deployment — while reducing cost, eliminating bottlenecks,
-                            and ensuring zero downtime seamlessly.</p>
+                        <p>Architecting document-intelligence systems that turn dense construction specifications 
+                            into structured, retrievable knowledge. Built a defense-in-depth LLM extraction 
+                            pipeline for public-procurement scoring grids - hardened with robust QA 
+                            validation. Shipped a zero-shot classifier to production that categorizes 
+                            incoming files without labeled training data, and integrated a high-performance OCR system 
+                            that cut processing time by 90%. Delivered an end-to-end PDF-to-Excel pipeline 
+                            for construction pricing documents, and introduced MLflow and Temporal orchestration 
+                            to establish reproducible, observable AI evaluation across the team.
+                        </p>
                     </div>
                 </div>
 
@@ -53,16 +81,37 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-info">
-                                <h3 class="timeline-title">Machine Learning Engineer</h3>
+                                <h3 class="timeline-title">Senior AI Stack Engineer</h3>
+                                <div class="timeline-company">FlexAI</div>
+                            </div>
+                            <span class="timeline-date">2025 - 2025 </span>
+                        </div>
+                        <p>Built AI-core infrastructure on the Runtime team to accelerate training, fine-tuning, 
+                            and deployment. Architected and implemented a Go-based KServe integration for scalable, 
+                            serverless inference, prototyped a Rust-based observability platform, and wired 
+                            several MLOps tools into backend services to automate distributed training.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <h3 class="timeline-title">Senior ML Engineer</h3>
                                 <div class="timeline-company">Cisco Systems</div>
                             </div>
                             <span class="timeline-date">2023 - 2025</span>
                         </div>
-                        <p>Designed and optimized scalable MLOps infrastructure for efficient CI/CD, seamless
-                            production deployment, monitoring, and lifecycle management of ML systems. Developed AI
-                            models for cybersecurity threat detection and automated network configuration management.
-                            Architected multi-agent LLMs systems. Supervised a PhD intern, co-authored publications,
-                            and secured a patent in applied AI.
+                        <p>Established and led the MLOps practice on Kubeflow - CI/CD, production deployment, 
+                            monitoring, and full model-lifecycle management — and stood up serverless inference 
+                            with KServe fed by Kafka streams. Developed cybersecurity systems for real-time 
+                            threat detection in cloud-native applications, combining time-series forecasting 
+                            with a two-stage PyTorch + XGBoost pipeline on tabular telemetry. 
+                            Built network-automation tooling with GNNs, LLMs, and Knowledge Graphs, 
+                            and architected a multi-agent LLM system for automated network reasoning. 
+                            Supervised a PhD intern, co-authored publications, and secured patents.
                         </p>
                     </div>
                 </div>
@@ -77,9 +126,13 @@
                             </div>
                             <span class="timeline-date">2022 - 2023</span>
                         </div>
-                        <p>Designed and implemented MLOps benchmarking tools - leveraging experiment tracking and ML
-                            pipeline orchestration — to evaluate and optimize ML workflows across internet security,
-                            brand safety, digital media trust, and contextual Ad targeting.</p>
+                        <p>Designed and implemented an MLOps benchmarking tool — built on experiment tracking 
+                            and pipeline orchestration — to track metrics and evaluate model quality across 
+                            internet security, brand safety, and contextual ad targeting. Extended it for 
+                            the product team to cover custom decision-rule evaluation against the IAB taxonomy 
+                            and GARM standards. Also helped scale the inference system to process millions 
+                            of videos and texts (YouTube, Twitter) in real time.
+                        </p>
                     </div>
                 </div>
 
@@ -93,11 +146,13 @@
                             </div>
                             <span class="timeline-date">2020 - 2022</span>
                         </div>
-                        <p>Engineered and deployed end-to-end ML solutions - from financial security and fraud
-                            detection to sports forecasting, computer vision railway tie defect detection, and an NLP
-                            system for resume-job offer matching. Improved anomaly detection in transactional data and
-                            efficiently managed the full ML pipeline: data preprocessing, feature engineering, model
-                            training, evaluation, and production deployment.</p>
+                        <p>Engineered and deployed end-to-end ML solutions — fraud detection for OneSpan 
+                            and Deutsche Bank, a computer-vision system for railway-tie defect detection (Roav7), 
+                            multi-sport outcome forecasting, and NLP for resume-to-job matching. 
+                            Sharpened real-time anomaly detection through temporal and behavioral pattern analysis, 
+                            turned the sports-forecasting model ROI positive (~3% return), and owned the full pipeline 
+                            from preprocessing and feature engineering through training, evaluation, and deployment.
+                        </p>
                     </div>
                 </div>
 
@@ -111,10 +166,11 @@
                             </div>
                             <span class="timeline-date">2019 - 2019</span>
                         </div>
-                        <p>Contributed to applied research projects: shallow gas detection from seabed seismic imagery
-                            (BGS); multi-sensor intelligent machining process monitoring (AMRC, co-facilitator);
-                            semantic and instance segmentation of 3D point clouds (SenSat), analysis of network metrics
-                            on customer perception of reliability (Telus).</p>
+                        <p>Contributed to applied research projects: shallow-gas detection from seabed 
+                            seismic imagery (BGS); multi-sensor intelligent machining process monitoring 
+                            (AMRC, co-facilitator); semantic and instance segmentation of 3D point clouds (SenSat); 
+                            and analysis of network metrics on customer perception of reliability (Telus).
+                        </p>
                     </div>
                 </div>
 
@@ -128,10 +184,11 @@
                             </div>
                             <span class="timeline-date">2016 - 2019</span>
                         </div>
-                        <p>Doctoral research in multi-messenger astrophysics, focusing on the combined study of
-                            neutrinos and gamma rays with large-scale astrophysical experiments such as ANTARES, HAWC,
-                            and KM3NeT. Worked on data analysis, detector performance optimization, and the development
-                            of advanced methodologies for high-energy particle detection.</p>
+                        <p>Doctoral research in multi-messenger astrophysics, studying neutrinos and gamma rays 
+                            with large-scale experiments such as ANTARES, HAWC, and KM3NeT. Focused on statistical 
+                            analysis, detector performance optimization, and advanced methodologies 
+                            for high-energy particle detection.
+                        </p>
                     </div>
                 </div>
 
@@ -145,8 +202,9 @@
                             </div>
                             <span class="timeline-date">2015 - 2015</span>
                         </div>
-                        <p>Researched gamma-ray astrophysics with H.E.S.S., worked on detector calibration, performance
-                            studies, and data analysis.</p>
+                        <p>Researched gamma-ray astrophysics with H.E.S.S., covering detector calibration, 
+                            performance studies, and data analysis.
+                        </p>
                     </div>
                 </div>
 
@@ -175,14 +233,19 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Mukharbek Organokov. All rights reserved. Built with passion for AI.</p>
+            <p>&copy; 2026 Mukharbek Organokov.</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/circassia/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="https://github.com/kabartay" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="mailto:mukharbek.organokov@gmail.com" class="footer-social-link" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+            </div>
         </div>
     </footer>
 
     <!-- Back to top button -->
-    <button class="back-to-top" id="backToTop">↑</button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-    <script src="src/js/main.js"></script>
+    <script src="/src/js/main.js"></script>
 </body>
 
 </html>
