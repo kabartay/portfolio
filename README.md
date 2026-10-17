@@ -32,15 +32,20 @@ Deeper developer docs live in [`docs/`](docs/README.md):
     │  ├── assets/                     # Images, icons, downloadable files
     │  │  ├── cv.pdf                   # Downloadable CV
     │  │  ├── favicon.svg              # Site favicon
-    │  │  └── og-card.svg              # Open Graph / social share card
+    │  │  ├── og-card.png              # Open Graph / social share card (1200×630; referenced by every page)
+    │  │  ├── og-card.svg              # Older vector version of the share card (not referenced)
+    │  │  ├── logos/                   # Company and university logos, 192px copies used on Experience/Education
+    │  │  └── projects/                # Project logos used on the Projects page
     │  ├── about.html                  # About page (also reachable at /about via Render rewrites)
     │  ├── experience.html             # Experience/Resume page
     │  ├── education.html              # Education page
-    │  ├── blog.html                   # Blog landing page (or list of posts)
+    │  ├── projects.html               # Projects page: logo, summary, links (and DOI where one exists)
+    │  ├── achievements.html           # Achievements: headline figures, patents, publications, Kaggle results
+    │  ├── blog.html                   # Blog landing page: cards that link to the post pages
+    │  ├── blog/                       # One page per post (/blog/<slug>), with newer/older links
     │  ├── contact.html                # Contact page (Formspree form lives here)
     │  ├── privacy.html                # Privacy notice (linked from the contact form)
     │  ├── index.html                  # Current homepage (also used as “shell” for aggregate loader)
-    │  ├── index-old.html              # Previous homepage kept for reference (not linked)
     │  ├── 404.html                    # Custom not-found page (shown on broken routes)
     │  ├── robots.txt                  # Crawler rules; points to sitemap.xml
     │  ├── sitemap.xml                 # SEO sitemap of canonical “pretty” URLs
@@ -50,8 +55,10 @@ Deeper developer docs live in [`docs/`](docs/README.md):
     │     │  └── theme.css             # Colour palettes (single source of truth for colours)
     │     └── js/                      # JavaScript for UX and dynamic assembly
     │        ├── aggregate.js          # Fetches each page, extracts main sections, and mounts them
-    │        ├── main.js               # Global UI (nav, animations) + delegated contact form handler
+    │        ├── contact-form.js       # Formspree submit handler (loaded by contact.html and the homepage)
+    │        ├── main.js               # Global UI on standalone pages (nav, theme, animations)
     │        └── theme-config.js       # Theme behaviour: default palette, toggle on/off, palette list
+    ├── assets-src/logos/              # Full-size logo originals (not deployed; make 192px copies for public/)
     ├── render.yml                     # Render Static Site blueprint (routes/rewrites + headers/caching)
     └── serve.json                     # Local dev config for `npx serve` (headers/spa/caching; optional)
 
@@ -87,7 +94,7 @@ The site is entirely static — no build step required.
 
 Used **Formspree** for simplicity - no server code.  
 
-- Obtain you own `https://formspree.io/f/YOUR-KEY` from Formspree;
+- Obtain your own `https://formspree.io/f/YOUR-KEY` from Formspree;
 - Target Email: set in the form’s Settings → Email Notifications;
 - (Optional) Project → Settings → Restrict to Domain: `organokov.com` (set your domain);
 - DevTools → Network to verify: `POST https://formspree.io/f/YOUR-KEY` returns `200 {"ok":true}`;
@@ -143,12 +150,12 @@ Delegated JS handler is bound globally in `public/src/js/main.js`, so it works e
 
 Pages live as separate HTML files:
 
-- `about.html`
-- `experience.html`
-- `blog.html`
-- `contact.html`
+- `about.html`, `experience.html`, `education.html`, `projects.html`, `achievements.html`
+- `blog.html` and one page per post in `blog/` (served at `/blog/<slug>`)
+- `contact.html`, `privacy.html`
 
-but are served at clean paths (`/about`, etc) using Render rewrites (see `render.yml`).
+but are served at clean paths (`/about`, `/blog/<slug>`, etc.) using Render rewrites (see `render.yml`).
+Every new page needs its own rewrite and, if public, a `sitemap.xml` entry.
 
 Use root-relative links in HTML:
 
@@ -196,7 +203,7 @@ with no manual steps needed.
 
 ### Local
 
-Use `npm run dev` for local development. Be aware, that `start` is only used if you run a Node server; Render static sites don't need it but it’s handy for testing.
+Use `npm run dev` for local development. Be aware that `start` is only used if you run a Node server; Render static sites don't need it but it’s handy for testing.
 
 ```json
 {

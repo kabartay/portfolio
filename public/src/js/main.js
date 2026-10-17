@@ -47,19 +47,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Blog post "Read more / Show less" toggle
-document.querySelectorAll('.toggle-excerpt').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const excerpt = btn.previousElementSibling;
-        if (excerpt && excerpt.classList.contains('blog-excerpt')) {
-            const expanded = excerpt.classList.toggle('expanded');
-            excerpt.classList.toggle('clamp', !expanded);
-            btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            btn.textContent = expanded ? 'Show less' : 'Read more';
-        }
-    });
-});
-
 // Navbar scroll state — CSS class, dark-mode-aware
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -155,8 +142,8 @@ if (paletteToggle) {
         const syncPalette = () => {
             paletteToggle.textContent = '';
             const label = window.__paletteLabel ? window.__paletteLabel() : '';
-            paletteToggle.title = label ? `Theme: ${label} — click to change` : 'Change colour theme';
-            paletteToggle.setAttribute('aria-label', label ? `Colour theme: ${label}. Click to change.` : 'Change colour theme');
+            paletteToggle.title = label ? `Theme: ${label} — click to change` : 'Change color theme';
+            paletteToggle.setAttribute('aria-label', label ? `Color theme: ${label}. Click to change.` : 'Change color theme');
         };
         syncPalette();
         paletteToggle.addEventListener('click', () => {
@@ -176,48 +163,12 @@ if (scrollProgress) {
     }, { passive: true });
 }
 
-// Hero typewriter: reveal the existing H1 text character-by-character
-// without blanking it first (avoids CLS & screen-reader issues)
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const fullText = heroTitle.textContent.trim();
-        heroTitle.setAttribute('aria-label', fullText);
-        heroTitle.textContent = '';
-
-        let i = 0;
-        const cursor = document.createElement('span');
-        cursor.style.cssText = 'display:inline-block;width:2px;height:0.9em;background:rgba(255,255,255,0.8);margin-left:2px;vertical-align:middle;animation:blink 0.9s step-end infinite';
-        heroTitle.appendChild(cursor);
-
-        const style = document.createElement('style');
-        style.textContent = '@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }';
-        document.head.appendChild(style);
-
-        function typeWriter() {
-            if (i < fullText.length) {
-                heroTitle.insertBefore(document.createTextNode(fullText.charAt(i)), cursor);
-                i++;
-                setTimeout(typeWriter, 70);
-            } else {
-                cursor.remove();
-            }
-        }
-        typeWriter();
-    }
-});
-
 // Keyboard navigation support
 document.addEventListener('keydown', (e) => {
     // Handle Escape key for mobile menu
     if (e.key === 'Escape' && navLinks && navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
-    }
-
-    // Handle Enter/Space for custom buttons
-    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('toggle-excerpt')) {
-        e.preventDefault();
-        e.target.click();
+        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
     }
 });
 
@@ -251,49 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set home link as active by default on single pages
     if (!document.body.classList.contains('smooth-scroll-page')) {
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const activeLink = document.querySelector(`a[href="${currentPath}"]`);
+        const path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        const section = '/' + (path.split('/')[1] || '');   // /blog/<post> highlights Blog
+        const activeLink = document.querySelector(`.nav-links a[href="${section}"]`);
         if (activeLink) {
             document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
             activeLink.classList.add('active');
         }
     }
 });
-
-// Bind once, even if main.js is loaded multiple times
-if (!window.__contactDelegatedBound) {
-    window.__contactDelegatedBound = true;
-
-    // Global delegated handler — works even if #contactForm is injected later
-    document.addEventListener('submit', async (e) => {
-        const form = e.target;
-        if (!form.matches('#contactForm')) return; // only handle the contact form
-        e.preventDefault();
-
-        const statusEl = document.getElementById('formStatus');
-        if (statusEl) statusEl.textContent = 'Sending...';
-
-        try {
-            const res = await fetch(form.action, {
-                method: form.method || 'POST',
-                body: new FormData(form),
-                headers: { Accept: 'application/json' }
-            });
-
-            const txt = await res.text();
-            console.log('Formspree status:', res.status, txt);
-
-            if (res.ok) {
-                form.reset();
-                if (statusEl) statusEl.textContent = 'Thanks! I’ll get back to you shortly.';
-            } else {
-                let msg = txt;
-                try { msg = JSON.parse(txt)?.errors?.[0]?.message || txt; } catch { }
-                if (statusEl) statusEl.textContent = 'Error: ' + msg;
-            }
-        } catch (err) {
-            console.error(err);
-            if (statusEl) statusEl.textContent = 'Network error. Please try again.';
-        }
-    });
-}
