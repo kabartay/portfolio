@@ -36,7 +36,7 @@ The tension between "every page is a standalone document" (good for SEO) and
 Every content area exists as a **standalone HTML file** in `public/`:
 
 ```
-about.html  experience.html  education.html  blog.html  contact.html
+about.html  experience.html  education.html  projects.html  achievements.html  blog.html  contact.html
 ```
 
 Each one:
@@ -91,6 +91,8 @@ const pages = [
   { id: 'about',      url: 'about.html',      title: 'About' },
   { id: 'experience', url: 'experience.html', title: 'Experience' },
   { id: 'education',  url: 'education.html',   title: 'Education' },
+  { id: 'projects',   url: 'projects.html',    title: 'Projects' },
+  { id: 'achievements', url: 'achievements.html', title: 'Achievements' },
   { id: 'blog',       url: 'blog.html',        title: 'Blog' },
   { id: 'contact',    url: 'contact.html',     title: 'Contact' },
 ];
@@ -173,7 +175,7 @@ copy-paste config and instructions to add or lock a palette.
 | File | Responsibility |
 | --- | --- |
 | [public/index.html](../public/index.html) | Homepage **shell** — empty mount + `aggregate.js` |
-| `public/{about,experience,education,blog,contact,privacy}.html` | Standalone pages; content lives in `<main><section>` |
+| `public/{about,experience,education,projects,achievements,blog,contact,privacy}.html` | Standalone pages; content lives in `<main><section>` |
 | [public/404.html](../public/404.html) | Custom not-found page (`noindex`) |
 | [public/src/css/style.css](../public/src/css/style.css) | Layout + component styles; `@import`s `theme.css` first |
 | [public/src/css/theme.css](../public/src/css/theme.css) | All colour values; one block per palette |
@@ -204,7 +206,7 @@ index.html shell paints (theme set in <head>, same as above)
   └─ aggregate.js runs
        ├─ strips any stale #hash (fresh loads start at top)
        ├─ fetch index.html → mount .hero, hide loader
-       ├─ fetch about/experience/education/blog/contact → mount <section>s
+       ├─ fetch about/experience/education/projects/achievements/blog/contact → mount <section>s
        ├─ setupSmoothScrolling()  (scroll-spy nav, replaceState hash)
        ├─ setupInteractions()     (fade-in, mobile menu, back-to-top, blog toggles)
        ├─ setupPaletteToggle()    (colour swatch)
@@ -234,6 +236,16 @@ for `/src/**` and `/assets/**`, short for `*.html`.
 ---
 
 ## Known quirks & gotchas
+
+- **One `<h1>` per page.** Standalone pages title their section with
+  `<h1 class="section-title">`; `aggregate.js` turns those into `<h2>` when it
+  injects them, so the homepage keeps the hero name as its only `<h1>`.
+- **The contact form handler lives in `contact-form.js`**, loaded by both
+  `contact.html` and `index.html`. (It used to sit in `main.js`, which the homepage
+  does not load, so the homepage form left the site on submit.)
+- **The navbar collapses to the ☰ menu at 1024px.** Nine links only fit on one row
+  above that; between 1025 and 1160px they use tighter spacing. Adding a nav item
+  means re-checking those widths.
 
 - **Injected homepage content needs delegated handlers.** The contact form is
   injected by the loader, so its submit handler is bound globally via delegation

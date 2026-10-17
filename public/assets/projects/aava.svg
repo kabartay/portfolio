@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0.45" stop-color="#ffdf9a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffdf9a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8bed2"/><stop offset="1" stop-color="#8ba3ba"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe7f8"/><stop offset="0.4" stop-color="#6fb0dd"/>
+      <stop offset="1" stop-color="#3c83b9"/>
+    </linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb254"/><stop offset="1" stop-color="#57913c"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5fbe"/>
+      <stop offset="0.45" stop-color="#6c9fd8"/>
+      <stop offset="0.78" stop-color="#c9e3f7"/>
+      <stop offset="1" stop-color="#f6dcc0"/>
+    </linearGradient>
+    <clipPath id="rounded"><rect width="128" height="128" rx="26"/></clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <rect width="128" height="128" fill="url(#sky)"/>
+    <circle cx="80" cy="40" r="21" fill="url(#glow)"/>
+    <circle cx="80" cy="40" r="11" fill="#ffe8ae"/>
+
+    <path d="M0 62 L16 46 L27 53 L42 31 L54 46 L66 39 L78 52 L96 38 L116 56 L128 50 L128 68 L0 68 Z"
+          fill="url(#far)"/>
+    <path d="M42 31 L34 44 L39 45 L44 39 L49 46 L55 47 Z" fill="#f2f6fb"/>
+    <path d="M96 38 L89 49 L94 49 L98 44 L102 50 L108 51 Z" fill="#f2f6fb"/>
+
+    <path d="M0 70 L18 60 L34 67 L50 58 L66 67 L84 60 L102 68 L128 62 L128 76 L0 76 Z"
+          fill="#5f7b90"/>
+
+    <path d="M0 78 L6 72 L11 77 L17 70 L23 76 L29 69 L35 75 L41 70 L47 76
+             L53 69 L59 75 L65 68 L71 75 L77 70 L83 76 L89 69 L95 75 L101 70
+             L107 76 L113 70 L119 76 L125 71 L128 75 L128 88 L0 88 Z"
+          fill="#27432c"/>
+
+    <path d="M0 86 L28 82 L52 88 L80 81 L104 86 L128 82 L128 128 L0 128 Z"
+          fill="url(#near)"/>
+
+    <path d="M66 83 C64 92 73 98 71 106 C69 116 58 122 54 128 L88 128 C84 120 80 112 82 104 C84 95 76 89 75 83 Z"
+          fill="url(#water)"/>
+
+    <path d="M40 96 L40 89 L43 85 L52 85 L56 81 L59 82 L58 86 L63 89
+             L64 97 L60 97 L60 91 L54 90 L47 91 L47 97 L43 97 L43 91 Z"
+          fill="#1d2e1a"/>
+  </g>
+</svg>

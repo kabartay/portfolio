@@ -38,12 +38,14 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/experience">Experience</a></li>
                 <li><a href="/education">Education</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/achievements">Achievements</a></li>
                 <li><a href="/blog" class="active">Blog</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-                <button class="palette-toggle" id="paletteToggle" aria-label="Switch colour palette" title="Switch colour palette">🟣</button>
+                <button class="palette-toggle" id="paletteToggle" aria-label="Switch color palette" title="Switch color palette">🟣</button>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle"
                         aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
             </div>
@@ -53,14 +55,14 @@
     <!-- Blog Section -->
     <section id="blog">
         <div class="container">
-            <h2 class="section-title fade-in">Latest Blog Posts</h2>
+            <h1 class="section-title fade-in">Latest Blog Posts</h1>
             <div class="blog-grid">
                 <article class="blog-card fade-in">
                     <div class="blog-image blog-image--1" aria-hidden="true">
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">The Future of AGI: Challenges and Opportunities</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/future-of-agi">The Future of AGI: Challenges and Opportunities</a></h3>
                         <p class="blog-excerpt clamp">
                             Explore the evolving landscape of artificial general intelligence — highlighting how
                             existing systems excel at narrow tasks, while AGI aspires to human-like reasoning,
@@ -69,10 +71,10 @@
                             even as profound challenges remain in areas like real-time learning,
                             ethical alignment, and safe deployment. (in progress)
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/future-of-agi">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Sep 15, 2025</span>
-                            <span>10 min read</span>
+                            <span>1 min read</span>
                         </div>
                     </div>
                 </article>
@@ -82,7 +84,7 @@
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">Ethical AI: Bias Detection</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/ethical-ai-bias-detection">Ethical AI: Bias Detection</a></h3>
                         <p class="blog-excerpt clamp">
                             Understanding and mitigating bias in deep learning is fundamental to building fair,
                             inclusive AI systems. Bias can manifest at different stages—unbalanced class
@@ -94,10 +96,10 @@
                             monitoring, and explainability are also vital for maintaining fairness over
                             time, supported by tools like AIF360 and fairness dashboards. (in progress)
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/ethical-ai-bias-detection">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Aug 31, 2025</span>
-                            <span>10 min read</span>
+                            <span>1 min read</span>
                         </div>
                     </div>
                 </article>
@@ -107,17 +109,17 @@
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="m17 6-2.5-2.5"/><path d="m14 8-1-1"/><path d="m7 18 2.5 2.5"/><path d="m10 16 1 1"/><path d="m2 15 2.5 2.5"/><path d="m22 9-2.5-2.5"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">Circassian DNA Chatbot</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/circassian-dna-chatbot">Circassian DNA Chatbot</a></h3>
                         <p class="blog-excerpt clamp">
                             A hands-on guide to building a production-ready chatbot on the Circassian DNA
                             project—illustrating how robust MLOps pipelines power each stage from training to
                             deployment. Learn how we streamlined model management, versioning, and continuous
                             integration for real-time, culturally-aware interactions. (in progress)
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/circassian-dna-chatbot">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Aug 30, 2025</span>
-                            <span>15 min read</span>
+                            <span>1 min read</span>
                         </div>
                     </div>
                 </article>
@@ -127,28 +129,28 @@
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">Ultimate Throughput with vLLM</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/vllm-throughput">Ultimate Throughput with vLLM</a></h3>
                         <p class="blog-excerpt clamp">
-                            Discover how <a href="https://docs.vllm.ai/en/latest/" target="_blank">vLLM</a>—powered
+                            Discover how <a href="https://docs.vllm.ai/en/latest/" target="_blank" rel="noopener noreferrer">vLLM</a>—powered
                             by
-                            its virtual memory-inspired <a href="https://arxiv.org/abs/2501.01005"
-                                target="_blank">PagedAttention</a> engine — significantly reduces memory
+                            its virtual memory-inspired <a href="https://arxiv.org/abs/2309.06180"
+                                target="_blank" rel="noopener noreferrer">PagedAttention</a> engine — significantly reduces memory
                             fragmentation
                             in <a
                                 href="https://medium.com/%40tam.tamanna18/vllm-and-tools-for-optimizing-large-language-model-performance-c4b7a1273bee"
-                                target="_blank">KV caches</a>, enabling near-zero waste and up to a <a
+                                target="_blank" rel="noopener noreferrer">KV caches</a>, enabling near-zero waste and up to a <a
                                 href="https://medium.com/%40christopher.keibel.90/why-you-might-want-to-use-vllm-for-your-open-source-llm-serving-5c2836432e81"
-                                target="_blank">2-4 times</a> throughput improvement over SOTA inference engines
+                                target="_blank" rel="noopener noreferrer">2-4 times</a> throughput improvement over SOTA inference engines
                             like <a href="https://github.com/NVIDIA/FasterTransformer"
-                                target="_blank">FasterTransformer</a>, especially with longer contexts and larger
+                                target="_blank" rel="noopener noreferrer">FasterTransformer</a>, especially with longer contexts and larger
                             models, making it the new standard for high-performance LLM serving. vLLM inherently
                             uses
                             optimized CUDA-backed kernels—such as <a href="https://arxiv.org/abs/2205.14135"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 FlashAttention</a> and <a href="https://arxiv.org/abs/2501.01005"
-                                target="_blank">FlashInfer</a> — to achieve top-tier <a
+                                target="_blank" rel="noopener noreferrer">FlashInfer</a> — to achieve top-tier <a
                                 href="https://docs.vllm.ai/en/stable/getting_started/installation/gpu.html"
-                                target="_blank">GPU</a> utilization without requiring teams to write custom
+                                target="_blank" rel="noopener noreferrer">GPU</a> utilization without requiring teams to write custom
                             kernels. FlashInfer delivers substantial latency improvements for GPU-serving
                             LLMs—including
                             a 29-69% reduction in inter-token latency compared to Triton backends, 28-30% lower
@@ -159,24 +161,24 @@
                             vLLM runs standard Hugging Face models, integrates seamlessly with PyTorch, and
                             supports OpenAI-compatible APIs — so you don't need to rebuild; just swap in a better
                             engine. <a href="https://docs.vllm.ai/en/v0.8.5/design/huggingface_integration.html"
-                                target="_blank">Hugging Face integration</a> confirms that vLLM can run standard
+                                target="_blank" rel="noopener noreferrer">Hugging Face integration</a> confirms that vLLM can run standard
                             Hugging
                             Face models without rewriting your workflows. <a
-                                href="https://pytorch.org/blog/vllm-joins-pytorch/" target="_blank">PyTorch
+                                href="https://pytorch.org/blog/vllm-joins-pytorch/" target="_blank" rel="noopener noreferrer">PyTorch
                                 ecosystem integration</a> shows it fits seamlessly into the PyTorch ecosystem and
                             supports diverse hardware backends with minimal hassle. And a built-in <a
                                 href="https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html"
-                                target="_blank">OpenAI-compatible server</a> demonstrates vLLM's ability to
+                                target="_blank" rel="noopener noreferrer">OpenAI-compatible server</a> demonstrates vLLM's ability to
                             mimic the OpenAI API, enabling plug-and-play usage in existing setups.
 
                             In less than a year, vLLM accelerated from 30K to 50K stars on GitHub — highlighting
                             its fast-moving momentum, robust open-source growth, and deep support from the developer
                             community.
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/vllm-throughput">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Aug 25, 2025</span>
-                            <span>15 min read</span>
+                            <span>2 min read</span>
                         </div>
                     </div>
                 </article>
@@ -186,39 +188,39 @@
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" x2="6" y1="6" y2="6"/><line x1="6" x2="6" y1="18" y2="18"/><path d="M10 6h8"/><path d="M10 18h8"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">KServe Meets vLLM: Cloud-Native Scalable LLM Serving on K8s</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/kserve-meets-vllm">KServe Meets vLLM: Cloud-Native Scalable LLM Serving on K8s</a></h3>
                         <p class="blog-excerpt clamp">
 
-                            <a href="https://kserve.github.io/website/" target="_blank">KServe</a> is a
+                            <a href="https://kserve.github.io/website/" target="_blank" rel="noopener noreferrer">KServe</a> is a
                             Kubernetes-native model serving platform offering enterprise-grade capabilities
                             for predictive and generative AI—including autoscaling, ModelMesh routing, and
                             standardized APIs across Hugging Face and <a href="https://docs.vllm.ai/en/latest/"
-                                target="_blank">vLLM</a>
+                                target="_blank" rel="noopener noreferrer">vLLM</a>
                             models. Since the <a
-                                href="https://kserve.github.io/website/0.13/blog/articles/2024-05-15-KServe-0.13-release/"
-                                target="_blank">v0.13 release</a>, KServe officially supports vLLM as a backend
+                                href="https://kserve.github.io/website/blog/kserve-0.13-release"
+                                target="_blank" rel="noopener noreferrer">v0.13 release</a>, KServe officially supports vLLM as a backend
                             runtime, enabling high-performance LLM serving within the Kubernetes ecosystem.
                             With the <a
                                 href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
-                                target="_blank">v0.15 release</a>, KServe added advanced LLM-specific features
+                                target="_blank" rel="noopener noreferrer">v0.15 release</a>, KServe added advanced LLM-specific features
                             including
-                            distributed KV caching via <a href="https://lmcache.ai/" target="_blank">LMCache</a>,
+                            distributed KV caching via <a href="https://lmcache.ai/" target="_blank" rel="noopener noreferrer">LMCache</a>,
                             LLM-aware autoscaling using KEDA, and integration with
                             the Envoy AI Gateway for intelligent routing and traffic management.
 
                             KServe supports a plug-and-play architecture using custom ServingRuntimes and
                             InferenceService CRDs, enabling optimized LLM serving via vLLM backends across GPUs
-                            (NVIDIA, AMD, Intel) and CPUs. Seamless integration matters - leverage vLLM's
+                            (NVIDIA, AMD, Intel) and CPUs. Seamless integration matters — leverage vLLM's
                             high-efficiency engine without rebuilding your stack while KServe handles orchestration,
                             scaling, and routing. Features like LMCache maximize GPU throughput critical for LLMs.
                             Offloading of KV-cache layers reduces inference costs and helps meet SLOs for latency and
                             throughput. (in progress)
 
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/kserve-meets-vllm">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Aug 22, 2025</span>
-                            <span>15 min read</span>
+                            <span>1 min read</span>
                         </div>
                     </div>
                 </article>
@@ -228,20 +230,19 @@
                         <svg class="blog-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                     </div>
                     <div class="blog-content">
-                        <h3 class="blog-title">Kubeflow: Cloud-Native MLOps on K8s for Scalable ML Workflows</h3>
+                        <h3 class="blog-title"><a class="blog-card-link" href="/blog/kubeflow-mlops">Kubeflow: Cloud-Native MLOps on K8s for Scalable ML Workflows</a></h3>
                         <p class="blog-excerpt clamp">
 
-                            <a href="https://www.kubeflow.org/" target="_blank">Kubeflow</a> is a modular,
+                            <a href="https://www.kubeflow.org/" target="_blank" rel="noopener noreferrer">Kubeflow</a> is a modular,
                             open-source MLOps platform built on Kubernetes, designed to orchestrate the entire
                             machine learning lifecycle — from notebooks and pipeline orchestration
                             to distributed training, hyperparameter tuning, and model serving via <a
-                                href="https://kserve.github.io/website/" target="_blank">KServe</a>. Its modular
+                                href="https://kserve.github.io/website/" target="_blank" rel="noopener noreferrer">KServe</a>. Its modular
                             architecture allows you to adopt only the
                             components you need. Kubeflow <a href="https://www.kubeflow.org/docs/components/"
-                                target="_blank">supports</a> Notebooks, Pipelines, Training Operators, Katib,
-                            and KServe — covering all stages from experimentation to deployment. <a
-                                href="https://www.cncf.io/blog/2025/06/18/announcing-kserve-v0-15-advancing-generative-ai-model-serving/"
-                                target="_blank">Kubeflow Pipelines</a> enables building portable,
+                                target="_blank" rel="noopener noreferrer">supports</a> Notebooks, Pipelines, Training Operators, Katib,
+                            and KServe — covering all stages from experimentation to deployment. <a href="https://www.kubeflow.org/docs/components/pipelines/"
+                                target="_blank" rel="noopener noreferrer">Kubeflow Pipelines</a> enables building portable,
                             container-based workflows deployable across any Kubernetes environment.
 
                             As a CNCF-incubated project backed by Google, Red Hat, IBM, NVIDIA, and others,
@@ -256,15 +257,15 @@
 
                             For ML teams focused mainly on experiment tracking, model versioning, and
                             ease-of-use,
-                            <a href="https://mlflow.org/" target="_blank">MLflow</a> is a <a
-                                href="https://www.zenml.io/blog/kubeflow-vs-mlflow" target="_blank">great MLOps
+                            <a href="https://mlflow.org/" target="_blank" rel="noopener noreferrer">MLflow</a> is a <a
+                                href="https://www.zenml.io/blog/kubeflow-vs-mlflow" target="_blank" rel="noopener noreferrer">great MLOps
                                 solution</a>.
 
                         </p>
-                        <button class="toggle-excerpt" aria-expanded="false">Read more</button>
+                        <a class="read-post" href="/blog/kubeflow-mlops">Read post &rarr;</a>
                         <div class="blog-meta">
                             <span>Aug 20, 2025</span>
-                            <span>15 min read</span>
+                            <span>1 min read</span>
                         </div>
                     </div>
                 </article>
@@ -279,6 +280,9 @@
             <div class="footer-social">
                 <a href="https://www.linkedin.com/in/circassia/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                 <a href="https://github.com/kabartay" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://www.kaggle.com/muhakabartay" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Kaggle" title="Kaggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/></svg></a>
+                <a href="https://huggingface.co/kabartay" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face" title="Hugging Face"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.4446 11.5059c0 1.1021.1673 2.1585.4847 3.1563-.0378-.0028-.0691-.0058-.1058-.0058-.4209 0-.8015.16-1.0704.4512-.3454.3737-.4984.8335-.4316 1.293a1.576 1.576 0 0 0 .2148.5978c-.2319.1864-.4018.4456-.4844.7578-.0646.2448-.131.7543.2149 1.2794a1.4552 1.4552 0 0 0-.0625.1055c-.208.3923-.2207.8372-.0371 1.25.2783.6258.9696 1.1175 2.3126 1.6467.8356.3292 1.5988.5411 1.6056.543 1.1046.2847 2.104.4277 2.969.4277 1.4173 0 2.4754-.3849 3.1525-1.1446 1.538.2651 2.791.1403 3.592.006.6773.7555 1.7332 1.1387 3.1467 1.1387.8649 0 1.8643-.143 2.969-.4278.0068-.0019.77-.2138 1.6056-.543 1.343-.5292 2.0343-1.0208 2.3126-1.6466.1836-.4129.171-.8577-.037-1.25a1.4685 1.4685 0 0 0-.0626-.1056c.346-.525.2795-1.0346.2149-1.2793-.0826-.3122-.2525-.5714-.4844-.7579.11-.1816.1831-.3788.2148-.5977.0669-.4595-.0862-.9193-.4316-1.293-.2688-.2913-.6495-.4513-1.0704-.4513-.0209 0-.0376.0008-.0588.0018.3162-.9966.4846-2.0518.4846-3.1523 0-5.807-4.7362-10.5144-10.5789-10.5144-5.8426 0-10.5788 4.7073-10.5788 10.5144Zm10.5788-9.4831c5.2727 0 9.5476 4.246 9.5476 9.483a9.4201 9.4201 0 0 1-.2696 2.2365c-.0039-.0047-.0079-.011-.0117-.0156-.274-.3255-.6679-.5059-1.1075-.5059-.352 0-.714.1155-1.0763.3438-.2403.1517-.5058.422-.7793.7598-.2534-.3492-.608-.5832-1.0137-.6465a1.5174 1.5174 0 0 0-.2344-.0176c-.9263 0-1.4828.7993-1.6935 1.5177-.1046.2426-.6065 1.3482-1.3614 2.0978-1.1681 1.1601-1.4458 2.3534-.8396 3.6382-.843.1029-1.5836.0927-2.365-.006.5906-1.212.3626-2.4388-.8426-3.6322-.755-.7496-1.2568-1.8552-1.3614-2.0978-.2107-.7184-.7673-1.5177-1.6935-1.5177-.078 0-.1568.0054-.2344.0176-.4057.0633-.7604.2973-1.0137.6465-.2735-.3379-.539-.6081-.7794-.7598-.3622-.2283-.7243-.3438-1.0762-.3438-.4266 0-.8094.171-1.0821.4786a9.4208 9.4208 0 0 1-.2598-2.1936c0-5.237 4.2749-9.483 9.5475-9.483zM8.6443 7.0036c-.4838.0043-.9503.2667-1.1934.7227-.3536.6633-.1006 1.4873.5645 1.84.351.1862.4883-.5261.836-.6485.3107-.1095.841.399 1.0078.086.3536-.6634.1025-1.4874-.5625-1.84a1.3659 1.3659 0 0 0-.6524-.1602Zm6.8403 0c-.2199-.002-.4426.05-.6504.1602-.665.3526-.9181 1.1766-.5645 1.84.1669.313.6971-.1955 1.0079-.086.3476.1224.4867.8347.838.6485.6649-.3527.916-1.1767.5624-1.84-.243-.456-.7096-.7184-1.1934-.7227Zm-9.7565 1.418a.8768.8768 0 0 0-.877.877c0 .4846.3925.877.877.877a.8768.8768 0 0 0 .877-.877.8768.8768 0 0 0-.877-.877zm12.6434 0c-.4845 0-.879.3925-.879.877 0 .4846.3945.877.879.877a.8768.8768 0 0 0 .877-.877.8768.8768 0 0 0-.877-.877zM8.7927 11.459c-.179-.003-.2793.1107-.2793.416 0 .8097.3874 2.125 1.4279 2.924.207-.7123 1.3453-1.2832 1.5079-1.2012.2315.1167.2191.4417.6074.7266.3884-.285.374-.6098.6056-.7266.1627-.082 1.3009.4889 1.5079 1.2012 1.0404-.799 1.4278-2.1144 1.4278-2.924 0-1.2212-1.583.6402-3.5413.6485-1.4686-.0061-2.7266-1.0558-3.2639-1.0645zM4.312 14.4768c.5792.365 1.6964 2.2751 2.1056 3.0177.1371.2488.371.3536.582.3536.4188 0 .7465-.4138.0391-.9395-1.0636-.791-.6914-2.0846-.1836-2.1642a.4302.4302 0 0 1 .0664-.004c.4616 0 .666.7892.666.7892s.5959 1.4898 1.6213 2.508c.942.9356 1.062 1.703.4961 2.6661-.0164-.004-.0159.0236-.1484.2149-.1853.2673-.4322.4688-.7188.6152-.5062.2269-1.1397.2696-1.7833.2696-1.037 0-2.1017-.1824-2.6975-.336-.0293-.0075-3.6505-.9567-3.1916-1.8224.0771-.1454.2033-.2031.3633-.2031.6463 0 1.823.9551 2.3283.9551.113 0 .196-.0865.2285-.2031.2249-.8045-3.2787-1.0522-2.9846-2.1642.0519-.1967.193-.2757.3907-.2754.854 0 2.7704 1.4923 3.172 1.4923.0307 0 .0525-.0085.0645-.0274.2012-.3227.1096-.5865-1.3087-1.4395-1.4182-.8533-2.4315-1.329-1.8653-1.9416.0651-.0707.1574-.1015.2695-.1015.8611.0002 2.8948 1.84 2.8948 1.84s.5487.5683.8809.5683c.0762 0 .1416-.0315.1855-.1054.2355-.3946-2.1858-2.2183-2.3224-2.971-.0926-.51.0641-.7676.3555-.7676-.0006.008.1701-.0285.4942.1759zm16.2257.5918c-.1366.7526-2.5579 2.5764-2.3224 2.9709.044.074.1092.1055.1855.1055.3321 0 .881-.5684.881-.5684s2.0336-1.8397 2.8947-1.84c.1121 0 .2044.0308.2695.1016.5662.6125-.447 1.0882-1.8653 1.9415-1.4183.853-1.51 1.1168-1.3087 1.4396.012.0188.0337.0273.0644.0273.4016 0 2.3181-1.4923 3.1721-1.4923.1977-.0002.3388.0787.3907.2754.294 1.112-3.2095 1.3597-2.9846 2.1642.0325.1166.1156.2032.2285.2032.5054 0 1.682-.9552 2.3283-.9552.16 0 .2862.0577.3633.2032.459.8656-3.1623 1.8149-3.1916 1.8224-.5958.1535-1.6605.336-2.6975.336-.6351 0-1.261-.0409-1.7638-.2599-.2949-.1472-.5488-.3516-.7383-.625-.0411-.0682-.1026-.1476-.1426-.205-.5726-.9679-.455-1.7371.4903-2.676 1.0254-1.0182 1.6212-2.508 1.6212-2.508s.2044-.7891.666-.7891a.4318.4318 0 0 1 .0665.0039c.5078.0796.88 1.3732-.1836 2.1642-.7074.5257-.3797.9395.039.9395.211 0 .445-.1047.5821-.3535.4092-.7426 1.5264-2.6527 2.1056-3.0178.5588-.3524.99-.1816.8497.5918z"/></svg></a>
+                <a href="https://scholar.google.com/citations?user=jYZaDVoAAAAJ" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
                 <a href="mailto:mukharbek.organokov@gmail.com" class="footer-social-link" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
             </div>
         </div>

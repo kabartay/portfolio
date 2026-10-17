@@ -15,8 +15,32 @@ services:
         source: /education
         destination: /education.html
       - type: rewrite
+        source: /projects
+        destination: /projects.html
+      - type: rewrite
+        source: /achievements
+        destination: /achievements.html
+      - type: rewrite
         source: /blog
         destination: /blog.html
+      - type: rewrite
+        source: /blog/future-of-agi
+        destination: /blog/future-of-agi.html
+      - type: rewrite
+        source: /blog/ethical-ai-bias-detection
+        destination: /blog/ethical-ai-bias-detection.html
+      - type: rewrite
+        source: /blog/circassian-dna-chatbot
+        destination: /blog/circassian-dna-chatbot.html
+      - type: rewrite
+        source: /blog/vllm-throughput
+        destination: /blog/vllm-throughput.html
+      - type: rewrite
+        source: /blog/kserve-meets-vllm
+        destination: /blog/kserve-meets-vllm.html
+      - type: rewrite
+        source: /blog/kubeflow-mlops
+        destination: /blog/kubeflow-mlops.html
       - type: rewrite
         source: /contact
         destination: /contact.html

@@ -117,10 +117,19 @@ Examples from this repo: `fix(dark): hide education card separator lines in dark
 
 ### Add a blog post
 
-Posts live as cards in [blog.html](../public/blog.html). Copy an existing
-`.blog-card` and edit it. The "Read more / Show less" behaviour is automatic for
-any card whose excerpt uses the `blog-excerpt` + `clamp` classes followed by a
-`.toggle-excerpt` button — both `main.js` and `aggregate.js` wire these up.
+Each post is a card in [blog.html](../public/blog.html) plus its own page in
+[public/blog/](../public/blog/). To add one:
+
+1. Copy an existing `public/blog/<slug>.html`, rename it, and edit the title, meta
+   tags (description, canonical, og/twitter), date, read time (words ÷ 200, rounded
+   up) and body paragraphs.
+2. Copy a `.blog-card` in `blog.html`: point its `.blog-card-link` title and the
+   `Read post →` link at `/blog/<slug>`. The title link covers the whole card, so a
+   click anywhere opens the post; links inside the excerpt stay clickable.
+3. Update the Newer/Older links (`.post-pager`) on the neighbouring posts.
+4. Add a rewrite to `render.yml` (`/blog/<slug>` → `/blog/<slug>.html`) and an entry
+   to `sitemap.xml`.
+5. Give every `target="_blank"` link `rel="noopener noreferrer"`.
 
 ### Add or change a colour palette
 
